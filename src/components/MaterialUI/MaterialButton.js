@@ -1,6 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import styled from 'styled-components'
+
+const StyledButton = styled(Button)`
+  color: black; 
+`
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,9 +20,9 @@ export default function ContainedButtons(props) {
 
   return (
     <div className={classes.root}>
-      <Button variant="contained" color="secondary">
+      <StyledButton variant="contained" color="secondary">
         {props.client}
-      </Button>
+      </StyledButton>
     </div>
   );
 }
