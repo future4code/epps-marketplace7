@@ -10,11 +10,6 @@ export class JobCard extends React.Component {
   };
 
   render() {
-    Date.prototype.formatDDMMYY = function () {
-      return (
-        this.getDate() + "/" + this.getMonth() + 1 + "/" + this.getYear()
-      );
-    };
     return (
       <div>
         <Card>
