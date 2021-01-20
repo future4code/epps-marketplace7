@@ -36,8 +36,34 @@ export const Card = styled.div`
   color: #f5f3fc;
   border-radius: 5px;
 
-  P {
+  p {
     padding: 5px;
+  }
+
+  .description {
+    height: 100px;
+    overflow-y: auto;
+
+    /* width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #8661b6;
+      border: 1px solid #494949;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #a98fde;
+    }
   }
 
   span {
