@@ -6,7 +6,7 @@ import InstagramIcon from '@material-ui/icons/Instagram'
 import FacebookIcon from '@material-ui/icons/Facebook';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import logoImage from '../images/logo.png'
+import logoImage from '../images/logoV.png'
 
 const DivFooter = styled(BottomNavigation)`
 display: flex;
@@ -34,12 +34,15 @@ padding: 0px 0px 0px 0px;
 
 const DivLogo = styled.div`
 display: flex;
-width: 200px;
+width: 100px;
+margin: 4px;
+padding-left: 10px;
 `
 
 const Logo = styled.img`
-width: 50%;
+width: 100%;
 height: 100%;
+object-fit: fill;
 `
 
 
