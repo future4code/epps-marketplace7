@@ -2,6 +2,11 @@ import styled from "styled-components";
 import DetailsIcon from "@material-ui/icons/Details";
 import TextField from "@material-ui/core/TextField";
 
+
+export const LogoHeader = styled.img`
+  width: 200px;
+`
+
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
