@@ -9,7 +9,7 @@ import ContainerHome from "./components/ContainerHome";
 				main: '#8661B6',
 			},
 			secondary: {
-				main: '#A98FDE',
+				main: '#F5F3FC',
 			},
 		},
 	});
