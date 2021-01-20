@@ -1,10 +1,15 @@
-import React from 'react'
-import { AppContainer } from './components/AppContainer'
+import React from "react";
+import { AppContainer } from "./components/AppContainer";
+import { JobsList } from "./components/JobsList";
+import { MainContainer } from "./Styled";
 
-function App() {
+export default class App extends React.Component {
+  render() {
 	return (
-        <AppContainer />
-	)
+    <MainContainer>
+      <AppContainer />
+      <JobsList />
+    </MainContainer>
+  );
+  }
 }
-
-export default App
