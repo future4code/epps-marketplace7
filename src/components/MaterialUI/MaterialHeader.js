@@ -3,7 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import ContainedButtons from './MaterialButton';
+import Category from './MaterialCategorys'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,12 +28,12 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title}>
             Future Ninja
           </Typography>
-          <Typography>Quem somos</Typography>
-          <Button color="inherit">Login Cliente</Button>
-          <Button color="inherit">Login Anunciante</Button>
+          <ContainedButtons client={"Quem Somos"} />
+          <ContainedButtons client={"Cliente"} />
+          <ContainedButtons client={"Anunciante"} />
         </Toolbar>
         <Toolbar>
-            Categorias
+          <Category />
         </Toolbar>
       </AppBar>
     </div>
