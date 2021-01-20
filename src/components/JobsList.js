@@ -9,7 +9,11 @@ import MenuItem from "@material-ui/core/MenuItem";
 export class JobsList extends React.Component {
   state = {
     jobs: [],
-    jobsFilter: { minValue: -Infinity, maxValue: Infinity },
+    jobsFilter: {
+      searchName: "",
+      minValue: -Infinity,
+      maxValue: Infinity,
+    },
     selectedOrder: "",
   };
 
@@ -44,7 +48,16 @@ export class JobsList extends React.Component {
     });
   };
 
-  minValue = (e) => {
+  onChangeSearchName = (e) => {
+    this.setState({
+      jobsFilter: {
+        ...this.state.jobsFilter,
+        searchName: e.target.value,
+      },
+    });
+  };
+
+  onChangeMinValue = (e) => {
     this.setState({
       jobsFilter: {
         ...this.state.jobsFilter,
@@ -53,7 +66,7 @@ export class JobsList extends React.Component {
     });
   };
 
-  maxValue = (e) => {
+  onChangeMaxValue = (e) => {
     this.setState({
       jobsFilter: {
         ...this.state.jobsFilter,
@@ -65,7 +78,13 @@ export class JobsList extends React.Component {
   // FUNÇÃO DE RENDERIZAÇÃO DO QUE FOR FILTRADO
   filterJobs = () => {
     const { jobs } = this.state;
+
     let filteredJobs = jobs
+      .filter((job) =>
+        job.title
+          .toLowerCase()
+          .includes(this.state.jobsFilter.searchName.toLowerCase())
+      )
       .filter(
         (job) => job.value >= (this.state.jobsFilter.minValue || -Infinity)
       )
@@ -85,39 +104,40 @@ export class JobsList extends React.Component {
       <Wrapper>
         <div className="header">
           <SearchBar
-            id="outlined-helperText"
+            // id="outlined-helperText"
             label="Buscar Job"
+            onChange={this.onChangeSearchName}
             // placeholder="Digite o serviço ou descrição"
             variant="outlined"
           />
           <RegularInput
-            id="outlined-helperText"
+            // id="outlined-helperText"
             type="Number"
             min="0"
-            onChange={this.minValue}
+            onChange={this.onChangeMinValue}
             label="De (R$)"
             defaultValue=""
             variant="outlined"
           />
           <RegularInput
-            id="outlined-helperText"
+            // id="outlined-helperText"
             type="Number"
             min="0"
-            onChange={this.maxValue}
+            onChange={this.onChangeMaxValue}
             label="Até (R$)"
             defaultValue=""
             variant="outlined"
           />
-            <SelectInput
-              select
-              label="Ordem"
-              value={this.state.selectedOrder}
-              onChange={this.orderType}
-              variant="outlined"
-            >
-              <MenuItem value="asc">Pelo menor valor</MenuItem>
-              <MenuItem value="desc">Pelo maior valor</MenuItem>
-            </SelectInput>
+          <SelectInput
+            select
+            label="Ordem"
+            value={this.state.selectedOrder}
+            onChange={this.orderType}
+            variant="outlined"
+          >
+            <MenuItem value="asc">Pelo menor valor</MenuItem>
+            <MenuItem value="desc">Pelo maior valor</MenuItem>
+          </SelectInput>
         </div>
         <JobsContainer>
           {orderedJobs.map((job) => {
