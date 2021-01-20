@@ -80,10 +80,14 @@ export class JobsList extends React.Component {
     const { jobs } = this.state;
 
     let filteredJobs = jobs
-      .filter((job) =>
-        job.title
-          .toLowerCase()
-          .includes(this.state.jobsFilter.searchName.toLowerCase())
+      .filter(
+        (job) =>
+          job.title
+            .toLowerCase()
+            .includes(this.state.jobsFilter.searchName.toLowerCase()) ||
+          job.description
+            .toLowerCase()
+            .includes(this.state.jobsFilter.searchName.toLowerCase())
       )
       .filter(
         (job) => job.value >= (this.state.jobsFilter.minValue || -Infinity)
