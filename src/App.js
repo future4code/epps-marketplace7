@@ -1,10 +1,7 @@
-
 import React from "react";
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-// import { AppContainer } from "./components/AppContainer";
-import { JobsList } from "./components/JobsList";
-import { MainContainer } from "./Styled";
+import ContainerHome from "./components/ContainerHome";
 
 	const NinjaTheme = createMuiTheme({
 		palette: {
@@ -12,7 +9,7 @@ import { MainContainer } from "./Styled";
 				main: '#8661B6',
 			},
 			secondary: {
-				main: '#A98FDE',
+				main: '#F5F3FC',
 			},
 		},
 	});
@@ -20,10 +17,12 @@ import { MainContainer } from "./Styled";
 export default class App extends React.Component {
   render() {
 	return (
-    <MainContainer>
-<ContainerHome />
-    </MainContainer>
-
+    <div>
+      <CssBaseline />
+      <ThemeProvider theme={NinjaTheme}>
+        <ContainerHome />
+      </ThemeProvider>
+    </div>
   );
   }
 }
