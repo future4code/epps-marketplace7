@@ -14,7 +14,7 @@ export class JobCard extends React.Component {
       <div>
         <Card>
           <h3>{this.props.title}</h3>
-          <p>
+          <p className="description">
             <span>Descrição: </span>
             {this.props.description}
           </p>
