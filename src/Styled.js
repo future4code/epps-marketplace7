@@ -45,10 +45,11 @@ export const Card = styled.div`
     font-weight: bold;
   }
 
-  h3:nth-child(1) {
+  h3 {
     background-color: #8661b6;
     border-radius: 5px 5px 0 0;
     padding: 5px;
+    margin: 0;
   }
 `;
 
