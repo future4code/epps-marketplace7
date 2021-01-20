@@ -1,10 +1,17 @@
 import React from 'react'
 import { AppContainer } from './components/AppContainer'
+import  Menu from "./components/PageAnunciante/Menu";
 
-function App() {
-	return (
-        <AppContainer />
-	)
+
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <div>
+       
+        <Menu />
+     
+      </div>
+    )
+  }
 }
-
-export default App
