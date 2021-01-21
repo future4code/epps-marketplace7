@@ -57,12 +57,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const TopBar = styled(Toolbar)`
-  justify-content: space-between;
-`;
+justify-content: space-between;
+`
 
 const LogoTopBar = styled.img`
-  height: 50px;
-`;
+height: 50px;
+`
 
 function ClientsPage(props) {
   const { window } = props;

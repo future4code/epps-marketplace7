@@ -31,10 +31,12 @@ export default function ButtonAppBar(props) {
             <LogoHeader src={logo} />
           </Typography>
           <ContainedButtons client={"Quem Somos"} />
-          <ContainedButtons client={"Cliente"} onClick={props.onClickClient} />
+          <ContainedButtons
+            client={"Cliente"}
+            btnClient={props.onClickClient} />
           <ContainedButtons
             client={"Anunciante"}
-            onClick={props.onClickSeller}
+            btnClient={props.onClickSeller}
           />
         </Toolbar>
         <Toolbar>
