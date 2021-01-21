@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components'
 import logo from '../images/logo2.png'
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -20,6 +21,26 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const StyledBtnContainer = styled.div`
+  visibility: visible;
+  display: flex;
+
+  @media (max-width: 700px){
+    visibility: hidden;
+  }
+`
+
+const Teste = styled(Toolbar)`
+  display: none;
+  
+
+  @media (min-width:320px) and (max-width: 699px){
+    display: flex;
+    justify-content: center;
+  }
+
+`
+
 export default function ButtonAppBar(props) {
   const classes = useStyles();
 
@@ -30,15 +51,28 @@ export default function ButtonAppBar(props) {
           <Typography className={classes.title}>
             <LogoHeader src={logo} />
           </Typography>
-          <ContainedButtons client={"Quem Somos"} />
+
+          <StyledBtnContainer>
+            <ContainedButtons client={"Quem Somos"} />
+            <ContainedButtons
+              client={"Cliente"}
+              btnClient={props.onClickClient} />
+            <ContainedButtons
+              client={"Anunciante"}
+              btnClient={props.onClickSeller} />
+          </StyledBtnContainer>
+        </Toolbar>
+
+        <Teste>
           <ContainedButtons
             client={"Cliente"}
             btnClient={props.onClickClient} />
           <ContainedButtons
             client={"Anunciante"}
-            btnClient={props.onClickSeller}
-          />
-        </Toolbar>
+            btnClient={props.onClickSeller} />
+
+        </Teste>
+
         <Toolbar>
           <Category />
         </Toolbar>
