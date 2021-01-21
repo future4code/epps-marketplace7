@@ -1,6 +1,7 @@
 import React from "react";
 import { Card } from "../Styled";
-import { StyledDetailsIcon } from "./../Styled";
+import styled from "styled-components";
+import DetailsIcon from "@material-ui/icons/Details";
 
 export class JobCard extends React.Component {
   state = { details: false };
@@ -10,6 +11,31 @@ export class JobCard extends React.Component {
   };
 
   render() {
+    let StyledDetailsIcon = "";
+    if (this.state.details) {
+      StyledDetailsIcon = styled(DetailsIcon)`
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        color: #a98fde;
+        cursor: pointer;
+        transform: rotate(180deg);
+        &:hover {
+          color: #f5f3fc;
+        }
+      `;
+    } else {
+      StyledDetailsIcon = styled(DetailsIcon)`
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        color: #a98fde;
+        cursor: pointer;
+        &:hover {
+          color: #f5f3fc;
+        }
+      `;
+    }
     return (
       <div>
         <Card>
@@ -33,7 +59,7 @@ export class JobCard extends React.Component {
               </p>
               <p>
                 <span>Prazo: </span>
-                {Date(this.props.dueDate)}
+                {this.props.dueDate} dias
               </p>
             </div>
           )}
