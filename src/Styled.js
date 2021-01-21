@@ -2,10 +2,9 @@ import styled from "styled-components";
 import DetailsIcon from "@material-ui/icons/Details";
 import TextField from "@material-ui/core/TextField";
 
-
 export const LogoHeader = styled.img`
   width: 200px;
-`
+`;
 
 export const MainContainer = styled.div`
   display: flex;
@@ -117,5 +116,15 @@ export const SelectInput = styled(TextField)`
   }
   .MuiSelect-select {
     min-width: 100px;
+  }
+`;
+
+export const MenuItem = styled.h5`
+  display: flex;
+  color: #333;
+  align-items: center;
+  margin: 10px;
+  &:hover {
+    color: #8661b6;
   }
 `;
