@@ -2,7 +2,7 @@ import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import  ContainerHome  from "./components/ContainerHome";
-import { ClientsPage } from "./components/PageAnunciante/ClientsPage";
+import ClientsPage from "./components/PageAnunciante/ClientsPage";
 import SellersPage from './components/PageAnunciante/SellersPage';
 
 const NinjaTheme = createMuiTheme({
