@@ -56,7 +56,7 @@ export const ClientsPage = (props) => {
           <Typography className={classes.title}>
             <LogoHeader src={logo} />
           </Typography>
-          <ContainedButtons client={"sair"} onClick={props.onClickSair} />
+          <ContainedButtons client={"sair"} btnClient={props.onClickSair} />
         </Toolbar>
       </AppBar>
       <NinjaDrawer
