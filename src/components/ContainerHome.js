@@ -12,13 +12,14 @@ class ContainerHome extends Component {
   render() {
     return (
       <div>
-        <MaterialHeader />
-        <Body>
-
-        </Body>
+        <MaterialHeader
+          onClickClient={this.props.onClickClient}
+          onClickSeller={this.props.onClickSeller}
+        />
+        <Body></Body>
         <MaterialFooter />
       </div>
-    )
+    );
   }
 }
 export default ContainerHome;

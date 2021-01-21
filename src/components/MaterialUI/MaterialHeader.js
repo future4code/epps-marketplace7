@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar(props) {
   const classes = useStyles();
 
   return (
@@ -31,8 +31,11 @@ export default function ButtonAppBar() {
             <LogoHeader src={logo} />
           </Typography>
           <ContainedButtons client={"Quem Somos"} />
-          <ContainedButtons client={"Cliente"} />
-          <ContainedButtons client={"Anunciante"} />
+          <ContainedButtons client={"Cliente"} onClick={props.onClickClient} />
+          <ContainedButtons
+            client={"Anunciante"}
+            onClick={props.onClickSeller}
+          />
         </Toolbar>
         <Toolbar>
           <Category />
