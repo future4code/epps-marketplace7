@@ -2,6 +2,10 @@ import styled from "styled-components";
 import DetailsIcon from "@material-ui/icons/Details";
 import TextField from "@material-ui/core/TextField";
 
+export const LogoHeader = styled.img`
+  width: 200px;
+`;
+
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -36,7 +40,7 @@ export const Card = styled.div`
   color: #f5f3fc;
   border-radius: 5px;
 
-  p {
+  P {
     padding: 5px;
   }
 
@@ -84,4 +88,43 @@ export const StyledDetailsIcon = styled(DetailsIcon)`
   right: 0;
   bottom: 0;
   color: #a98fde;
+`;
+
+export const JobsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+`;
+
+export const SearchBar = styled(TextField)`
+  flex-grow: 1;
+  .MuiInputBase-input {
+    padding: 5px 10px;
+  }
+`;
+
+export const RegularInput = styled(TextField)`
+  .MuiInputBase-input {
+    padding: 5px 10px;
+    width: 100px;
+    min-width: 60px;
+  }
+`;
+
+export const SelectInput = styled(TextField)`
+  .MuiOutlinedInput-input {
+    padding: 10px 5px;
+  }
+  .MuiSelect-select {
+    min-width: 100px;
+  }
+`;
+
+export const MenuItem = styled.h5`
+  display: flex;
+  color: #333;
+  align-items: center;
+  margin: 10px;
+  &:hover {
+    color: #8661b6;
+  }
 `;

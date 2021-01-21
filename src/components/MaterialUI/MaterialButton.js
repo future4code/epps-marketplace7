@@ -4,7 +4,8 @@ import Button from '@material-ui/core/Button';
 import styled from 'styled-components'
 
 const StyledButton = styled(Button)`
-  color: black; 
+  color:  #F5F3FC;
+  background-color: #494949; 
 `
 
 const useStyles = makeStyles((theme) => ({
@@ -20,7 +21,7 @@ export default function ContainedButtons(props) {
 
   return (
     <div className={classes.root}>
-      <StyledButton variant="contained" color="secondary">
+      <StyledButton variant="contained" color="primary" onClick={props.btnClient}>
         {props.client}
       </StyledButton>
     </div>
