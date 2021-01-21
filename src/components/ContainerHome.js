@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import MaterialHeader from './MaterialUI/MaterialHeader'
 import MaterialFooter from './MaterialUI/MaterialFooter'
+import ServiceCard from './ServiceCard'
 
 const Body = styled.div`
   display: flex;
@@ -14,7 +15,9 @@ class ContainerHome extends Component {
       <div>
         <MaterialHeader />
         <Body>
+          <ServiceCard>
 
+          </ServiceCard>
         </Body>
         <MaterialFooter />
       </div>
