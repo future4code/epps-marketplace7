@@ -147,6 +147,7 @@ export class JobsList extends React.Component {
           {orderedJobs.map((job) => {
             return (
               <JobCard
+                id={job.id}
                 title={job.title}
                 description={job.description}
                 value={job.value}
