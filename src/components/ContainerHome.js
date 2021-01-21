@@ -5,7 +5,7 @@ import MaterialFooter from './MaterialUI/MaterialFooter'
 
 const Body = styled.div`
   display: flex;
-  height: 81.7vh ;
+  height: 79.99vh ;
 `
 
 class ContainerHome extends Component {
