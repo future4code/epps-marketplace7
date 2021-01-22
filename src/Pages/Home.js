@@ -15,6 +15,7 @@ export default class Home extends Component {
         <MaterialHeader
           onClickClient={this.props.onClickClient}
           onClickSeller={this.props.onClickSeller}
+          onclickAboutUs={this.props.onClickAboutUs}
         />
         <Body></Body>
         <MaterialFooter />

@@ -4,6 +4,7 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import  Home  from "./Pages/Home";
 import ClientsPage from "./Pages/Clients/ClientsPage";
 import AdvertisersPage from './Pages/Advertisers/AdvertisersPage';
+import AboutUs from './Pages/AboutUs/AboutUs.js'
 
 const NinjaTheme = createMuiTheme({
   palette: {
@@ -18,7 +19,7 @@ const NinjaTheme = createMuiTheme({
 
 export default class App extends React.Component {
   state = {
-    tela: "Home",
+    tela: "AboutUs",
   };
   onClickSair = () => {
     this.setState({ tela: "Home" });
@@ -29,6 +30,9 @@ export default class App extends React.Component {
   onClickSeller = () => {
     this.setState({ tela: "Seller" });
   };
+  onclickAboutUs = () => {
+    this.setState({ tela: "AboutUs" })
+  }
   render() {
 	  console.log(this.state.tela)
     const TelaAtual = () => {
@@ -38,12 +42,19 @@ export default class App extends React.Component {
             <Home
               onClickClient={this.onClickClient}
               onClickSeller={this.onClickSeller}
+              onclickAboutUs={this.onclickAboutUs}
             />
           );
         case "Client":
           return <ClientsPage onClickSair={this.onClickSair} />;
         case "Seller":
           return <AdvertisersPage onClickSair={this.onClickSair} />;
+        case "AboutUs":
+          return <AboutUs 
+            onClickClient={this.onClickClient}
+            onClickSeller={this.onClickSeller}
+            onclickAboutUs={this.onclickAboutUs}
+          />
       }
     };
 
