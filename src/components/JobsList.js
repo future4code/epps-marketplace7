@@ -1,8 +1,9 @@
 import React from "react";
 import axios from "axios";
-import { baseUrl } from "../../components/Parameters";
-import { JobCard } from "../../components/JobCard";
-import { JobsContainer, SearchBar, SelectInput, RegularInput, Wrapper } from "../../components/Styled";
+import { baseUrl } from "./Parameters";
+import { JobCard } from "./JobCard";
+import { JobsContainer, SearchBar, SelectInput, Wrapper } from "../Styled";
+import { RegularInput } from "./../Styled";
 import MenuItem from "@material-ui/core/MenuItem";
 
 export class JobsList extends React.Component {
@@ -146,7 +147,6 @@ export class JobsList extends React.Component {
           {orderedJobs.map((job) => {
             return (
               <JobCard
-                key={job.id}
                 title={job.title}
                 description={job.description}
                 value={job.value}

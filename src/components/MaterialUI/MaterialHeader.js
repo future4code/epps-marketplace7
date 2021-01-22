@@ -1,13 +1,12 @@
-import React from "react";
-import styled from "styled-components";
-import logo from "../images/logoH.png";
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import ContainedButtons from "../MaterialUI/MaterialButton";
-import Category from "../MaterialUI/MaterialCategorys";
-import { LogoHeader } from "../../components/Styled";
-import { Typography } from "@material-ui/core";
+import React from 'react';
+import logo from '../images/logo2.png'
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import ContainedButtons from './MaterialButton';
+import Category from './MaterialCategorys'
+import { LogoHeader } from '../../Styled';
+import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,24 +20,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const StyledBtnContainer = styled.div`
-  visibility: visible;
-  display: flex;
-
-  @media (max-width: 700px) {
-    visibility: hidden;
-  }
-`;
-
-const Teste = styled(Toolbar)`
-  display: none;
-
-  @media (min-width: 320px) and (max-width: 699px) {
-    display: flex;
-    justify-content: center;
-  }
-`;
-
 export default function ButtonAppBar(props) {
   const classes = useStyles();
 
@@ -49,38 +30,15 @@ export default function ButtonAppBar(props) {
           <Typography className={classes.title}>
             <LogoHeader src={logo} />
           </Typography>
-
-          <StyledBtnContainer>
-            <ContainedButtons 
-              client={"Quem Somos"} 
-              btnClient={props.onClickAboutUs}
-            />
-            <ContainedButtons
-              client={"Cliente"}
-              btnClient={props.onClickClient}
-            />
-            <ContainedButtons
-              client={"Anunciante"}
-              btnClient={props.onClickSeller}
-            />
-          </StyledBtnContainer>
-        </Toolbar>
-
-        <Teste>
-          <ContainedButtons 
-              client={"Quem Somos"} 
-              btnClient={props.onClickAboutUs}
-            />
+          <ContainedButtons client={"Quem Somos"} />
           <ContainedButtons
             client={"Cliente"}
-            btnClient={props.onClickClient}
-          />
+            btnClient={props.onClickClient} />
           <ContainedButtons
             client={"Anunciante"}
             btnClient={props.onClickSeller}
           />
-        </Teste>
-
+        </Toolbar>
         <Toolbar>
           <Category />
         </Toolbar>

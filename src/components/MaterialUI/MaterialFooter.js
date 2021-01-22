@@ -12,6 +12,9 @@ const DivFooter = styled(BottomNavigation)`
 display: flex;
 background-color: #8661b6;
 justify-content: space-between;
+bottom: 0;
+width: 100vw;
+
 `
 const DivButtonSocial = styled.div`
 display: flex;

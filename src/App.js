@@ -1,10 +1,9 @@
 import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import  Home  from "./Pages/Home";
-import ClientsPage from "./Pages/Clients/ClientsPage";
-import AdvertisersPage from './Pages/Advertisers/AdvertisersPage';
-import AboutUs from './Pages/AboutUs/AboutUs.js'
+import  ContainerHome  from "./components/ContainerHome";
+import { ClientsPage } from "./components/PageAnunciante/ClientsPage";
+import SellersPage from './components/PageAnunciante/SellersPage';
 
 const NinjaTheme = createMuiTheme({
   palette: {
@@ -19,7 +18,7 @@ const NinjaTheme = createMuiTheme({
 
 export default class App extends React.Component {
   state = {
-    tela: "AboutUs",
+    tela: "Home",
   };
   onClickSair = () => {
     this.setState({ tela: "Home" });
@@ -30,31 +29,21 @@ export default class App extends React.Component {
   onClickSeller = () => {
     this.setState({ tela: "Seller" });
   };
-  onclickAboutUs = () => {
-    this.setState({ tela: "AboutUs" })
-  }
   render() {
 	  console.log(this.state.tela)
     const TelaAtual = () => {
       switch (this.state.tela) {
         case "Home":
           return (
-            <Home
+            <ContainerHome
               onClickClient={this.onClickClient}
               onClickSeller={this.onClickSeller}
-              onclickAboutUs={this.onclickAboutUs}
             />
           );
         case "Client":
           return <ClientsPage onClickSair={this.onClickSair} />;
         case "Seller":
-          return <AdvertisersPage onClickSair={this.onClickSair} />;
-        case "AboutUs":
-          return <AboutUs 
-            onClickClient={this.onClickClient}
-            onClickSeller={this.onClickSeller}
-            onclickAboutUs={this.onclickAboutUs}
-          />
+          return <SellersPage onClickSair={this.onClickSair} />;
       }
     };
 
