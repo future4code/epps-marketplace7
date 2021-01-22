@@ -19,7 +19,7 @@ const NinjaTheme = createMuiTheme({
 
 export default class App extends React.Component {
   state = {
-    tela: "AboutUs",
+    tela: "Home",
   };
   onClickSair = () => {
     this.setState({ tela: "Home" });

@@ -4,7 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import Toolbar from "@material-ui/core/Toolbar";
 
 export const LogoHeader = styled.img`
-  height: 150px;
+  width: 250px;
 `;
 
 export const TopBar = styled(Toolbar)`

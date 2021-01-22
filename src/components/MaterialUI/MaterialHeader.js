@@ -1,13 +1,12 @@
-import React from "react";
-import styled from "styled-components";
-import logo from "../images/logoH.png";
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import ContainedButtons from "../MaterialUI/MaterialButton";
-import Category from "../MaterialUI/MaterialCategorys";
-import { LogoHeader } from "../../components/Styled";
-import { Typography } from "@material-ui/core";
+import React from 'react';
+import styled from 'styled-components'
+import logo from '../images/logoH.png'
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import ContainedButtons from './MaterialButton';
+import { LogoHeader } from '../Styled';
+import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,19 +24,21 @@ const StyledBtnContainer = styled.div`
   visibility: visible;
   display: flex;
 
-  @media (max-width: 700px) {
+  @media (max-width: 700px){
     visibility: hidden;
   }
-`;
+`
 
-const Teste = styled(Toolbar)`
+const MobileHeader = styled(Toolbar)`
   display: none;
+  
 
-  @media (min-width: 320px) and (max-width: 699px) {
+  @media (max-width: 699px){
     display: flex;
     justify-content: center;
   }
-`;
+
+`
 
 export default function ButtonAppBar(props) {
   const classes = useStyles();
@@ -53,7 +54,7 @@ export default function ButtonAppBar(props) {
           <StyledBtnContainer>
             <ContainedButtons 
               client={"Quem Somos"} 
-              btnClient={props.onClickAboutUs}
+              btnClient={props.onclickAboutUs}
             />
             <ContainedButtons
               client={"Cliente"}
@@ -66,11 +67,7 @@ export default function ButtonAppBar(props) {
           </StyledBtnContainer>
         </Toolbar>
 
-        <Teste>
-          <ContainedButtons 
-              client={"Quem Somos"} 
-              btnClient={props.onClickAboutUs}
-            />
+        <MobileHeader>
           <ContainedButtons
             client={"Cliente"}
             btnClient={props.onClickClient}
@@ -79,11 +76,8 @@ export default function ButtonAppBar(props) {
             client={"Anunciante"}
             btnClient={props.onClickSeller}
           />
-        </Teste>
+        </MobileHeader>
 
-        <Toolbar>
-          <Category />
-        </Toolbar>
       </AppBar>
     </div>
   );
