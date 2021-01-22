@@ -16,11 +16,14 @@ border: 1px solid #333;
 `
 const Input = styled.input`
 width: 45vw;
-height: 3vh;
+height: 4vh;
 border-radius: 3px;
 background-color: #F5F3FC;
 padding: 5px;
 border: none;
+&:focus {
+    outline: none;
+}
 `
 
 const Text = styled.textarea`
@@ -30,6 +33,9 @@ border-radius: 3px;
 border: none;
 padding: 5px;
 resize: none;
+&:focus {
+    outline: none;
+}
 `
 const Label = styled.label`
 width: 45vw;
@@ -65,7 +71,7 @@ export default class RegisterJob extends React.Component {
                 <Input />
                 <Label>Prazo</Label>
                 <Input />
-                <StyledButton variant="contained" color='red'  disableElevation>
+                <StyledButton variant="contained"  disableElevation>
                     Cadastrar Trabalho
                 </StyledButton>
             </ContainerForm>

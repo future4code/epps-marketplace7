@@ -31,6 +31,8 @@ margin: 10px;
 &: hover {
   color: #8661B6;
 }
+
+
 `
 export default class Menu extends React.Component {
   render() {
