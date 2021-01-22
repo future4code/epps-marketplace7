@@ -51,7 +51,10 @@ export default function ButtonAppBar(props) {
           </Typography>
 
           <StyledBtnContainer>
-            <ContainedButtons client={"Quem Somos"} />
+            <ContainedButtons 
+              client={"Quem Somos"} 
+              btnClient={props.onClickAboutUs}
+            />
             <ContainedButtons
               client={"Cliente"}
               btnClient={props.onClickClient}
@@ -64,6 +67,10 @@ export default function ButtonAppBar(props) {
         </Toolbar>
 
         <Teste>
+          <ContainedButtons 
+              client={"Quem Somos"} 
+              btnClient={props.onClickAboutUs}
+            />
           <ContainedButtons
             client={"Cliente"}
             btnClient={props.onClickClient}
