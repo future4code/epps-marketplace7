@@ -1,8 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useState } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
-// import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
@@ -12,7 +10,6 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
-// import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import CardTravelIcon from "@material-ui/icons/CardTravel";
 import CreateIcon from "@material-ui/icons/Create";
@@ -20,6 +17,7 @@ import logo from "../images/logo2.png";
 import styled from "styled-components";
 import { JobsList } from "./../JobsList";
 import ContainedButtons from "../MaterialUI/MaterialButton";
+import { HiredJobsPage } from "./../HiredJobsPage";
 
 const drawerWidth = 240;
 
@@ -57,19 +55,19 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const TopBar = styled(Toolbar)`
-justify-content: space-between;
-`
+  justify-content: space-between;
+`;
 
 const LogoTopBar = styled.img`
-height: 50px;
-`
+  height: 50px;
+`;
 
-function ClientsPage(props) {
+export default function ClientsPage(props) {
   const { window } = props;
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
+  const [CurrentScreen, setCurrentScreen] = useState("");
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -83,22 +81,35 @@ function ClientsPage(props) {
           <ListItemIcon>
             <CardTravelIcon />
           </ListItemIcon>
-          <ListItemText primary="Buscar Jobs" />
+          <ListItemText
+            primary="Buscar Jobs"
+            onClick={() => setCurrentScreen("All Jobs")}
+          />
         </ListItem>
-        {/* <Divider /> */}
         <ListItem button>
           <ListItemIcon>
             <CreateIcon />
           </ListItemIcon>
-          <ListItemText primary="Jobs Contratados" />
+          <ListItemText
+            primary="Jobs Contratados"
+            onClick={() => setCurrentScreen("Hired Jobs")}
+          />
         </ListItem>
       </List>
-      {/* <Divider /> */}
     </div>
   );
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
+
+  const Tela = () => {
+    switch (CurrentScreen) {
+      case "All Jobs":
+        return <JobsList />;
+      case "Hired Jobs":
+        return <HiredJobsPage />;
+    }
+  };
 
   return (
     <div className={classes.root}>
@@ -149,20 +160,10 @@ function ClientsPage(props) {
           </Drawer>
         </Hidden>
       </nav>
-      <main className={classes.content}>
+      <main id="main-screen" className={classes.content}>
         <div className={classes.toolbar} />
-        <JobsList />
+        {Tela()}
       </main>
     </div>
   );
 }
-
-ClientsPage.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
-};
-
-export default ClientsPage;
