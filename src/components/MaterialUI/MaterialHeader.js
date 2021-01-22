@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import ContainedButtons from './MaterialButton';
-import Category from './MaterialCategorys'
 import { LogoHeader } from '../../Styled';
 import { Typography } from '@material-ui/core';
 
@@ -30,7 +29,7 @@ const StyledBtnContainer = styled.div`
   }
 `
 
-const Teste = styled(Toolbar)`
+const MobileHeader = styled(Toolbar)`
   display: none;
   
 
@@ -63,19 +62,14 @@ export default function ButtonAppBar(props) {
           </StyledBtnContainer>
         </Toolbar>
 
-        <Teste>
+        <MobileHeader>
           <ContainedButtons
             client={"Cliente"}
             btnClient={props.onClickClient} />
           <ContainedButtons
             client={"Anunciante"}
             btnClient={props.onClickSeller} />
-
-        </Teste>
-
-        <Toolbar>
-          <Category />
-        </Toolbar>
+        </MobileHeader>
       </AppBar>
     </div>
   );
