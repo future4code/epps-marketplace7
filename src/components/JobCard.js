@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Card } from "../Styled";
+import { Card } from "./Styled";
 import styled from "styled-components";
 import DetailsIcon from "@material-ui/icons/Details";
 import AddBoxIcon from "@material-ui/icons/AddBox";
