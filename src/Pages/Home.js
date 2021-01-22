@@ -1,20 +1,21 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import MaterialHeader from './MaterialUI/MaterialHeader'
-import MaterialFooter from './MaterialUI/MaterialFooter'
+import MaterialHeader from '../components/MaterialUI/MaterialHeader'
+import MaterialFooter from "../components/MaterialUI/MaterialFooter";
 
 const Body = styled.div`
   display: flex;
   height: 81.7vh ;
 `
 
-class ContainerHome extends Component {
+export default class Home extends Component {
   render() {
     return (
       <div>
         <MaterialHeader
           onClickClient={this.props.onClickClient}
           onClickSeller={this.props.onClickSeller}
+          onclickAboutUs={this.props.onclickAboutUs}
         />
         <Body></Body>
         <MaterialFooter />
@@ -22,4 +23,3 @@ class ContainerHome extends Component {
     );
   }
 }
-export default ContainerHome;

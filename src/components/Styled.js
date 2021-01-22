@@ -1,9 +1,25 @@
 import styled from "styled-components";
 import DetailsIcon from "@material-ui/icons/Details";
 import TextField from "@material-ui/core/TextField";
+import Toolbar from "@material-ui/core/Toolbar";
 
 export const LogoHeader = styled.img`
-  width: 200px;
+  width: 250px;
+`;
+
+export const TopBar = styled(Toolbar)`
+  justify-content: space-between;
+
+  .Home-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .Homebtn-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
 `;
 
 export const MainContainer = styled.div`
