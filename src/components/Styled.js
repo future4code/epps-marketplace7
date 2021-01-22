@@ -5,6 +5,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 
 export const LogoHeader = styled.img`
   width: 250px;
+  cursor: pointer;
 `;
 
 export const TopBar = styled(Toolbar)`
