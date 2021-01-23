@@ -13,6 +13,7 @@ export default class Home extends Component {
     return (
       <div>
         <MaterialHeader
+          onClickHome={this.props.onClickHome}
           onClickClient={this.props.onClickClient}
           onClickSeller={this.props.onClickSeller}
           onclickAboutUs={this.props.onclickAboutUs}
