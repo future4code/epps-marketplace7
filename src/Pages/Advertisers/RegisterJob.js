@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Button from '@material-ui/core/Button';
+import axios from 'axios'
 
 const ContainerForm = styled.div`
 display: flex;
@@ -57,28 +58,76 @@ color: #8661B6;
 `
 
 export default class RegisterJob extends React.Component {
+    state = {
+        inputTitle: '',
+        inputDescription: '',
+        inputValue: 0,
+        inputPayment: [],
+        inputDueDate: 0
+    }
+    handleInputTitle = (e) => {
+        this.setState({ inputTitle: e.target.value })
+      }
+
+      handleInputDescription = (e) => {
+        this.setState({ inputDescription: e.target.value })
+      }
+      
+      handleInputValue = (e) => {
+        this.setState({ inputValue: e.target.value })
+      }
+      
+      handleinputPayment = (e) => {
+        this.setState({ inputPayment: [e.target.value] })
+      }
+      
+      handleInputDueDate = (e) => {
+        this.setState({ inputDueDate: e.target.value })
+      }
+
+      createNeWJob = () => {
+          const body = {
+            title: this.state.inputTitle,
+            description: this.state.inputDescription,
+            value: this.state.inputValue,
+            paymentMethods: this.state.inputPayment,
+            dueDate: this.state.inputDueDate
+          }
+
+          axios.post("https://us-central1-labenu-apis.cloudfunctions.net/futureNinjasOne/jobs", body)
+          .then((resposta) => {
+              alert('Proposta de trabalho criada com sucesso :)')
+              this.setState({ inputTitle: ''})
+              this.setState({ inputDescription: ''})
+              this.setState({ inputValue: ''})
+              this.setState({ inputPayment: [] })
+              this.setState({ inputDueDate: ''})
+              
+          })
+          .catch((erro) => {
+            alert('Não foi possivel criar proposta de trabalho :(')
+          })
+      }
+
+
     render() {
         return (
             <ContainerForm>
                 <Title>Cadastre um novo Trabalho</Title>
                 <Label>Titulo</Label>
-                <Input />
+                <Input value={this.state.inputTitle} onChange={this.handleInputTitle} />
                 <Label>Descrição</Label>
-                <Text rows="4" cols="50" />
+                <Text rows="4" cols="50" value={this.state.inputDescription} onChange={this.handleInputDescription} />
                 <Label>Valor da remuneração</Label>
-                <Input />
+                <Input value={this.state.inputValue} onChange={this.handleInputValue} />
                 <Label>Método(s) de pagamento oferecidos</Label>
-                <Input />
+                <Input value={this.state.inputPayment} onChange={this.handleinputPayment} />
                 <Label>Prazo</Label>
-                <Input />
-                <StyledButton variant="contained"  disableElevation>
+                <Input value={this.state.inputDueDate} onChange={this.handleInputDueDate} />
+                <button variant="contained"  disableElevation onClick={this.createNeWJob}>
                     Cadastrar Trabalho
-                </StyledButton>
+                </button>
             </ContainerForm>
         )
     }
 }
-
-
-
-

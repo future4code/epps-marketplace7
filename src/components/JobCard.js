@@ -71,7 +71,7 @@ export class JobCard extends React.Component {
           </p>
           <p>
             <span>Valor: </span>
-            R$ {this.props.value.toFixed(2)}
+            R$ {Number(this.props.value).toFixed(2)}
           </p>
           <StyledDetailsIcon onClick={this.toggleDetails} />
           {this.state.details && (
