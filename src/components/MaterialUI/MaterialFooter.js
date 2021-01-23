@@ -19,6 +19,9 @@ const DivButtonSocial = styled.div`
 const DivItemsRight = styled.div`
   display: flex;
   align-items: center;
+  @media (max-width: 414px) {
+    width: 50%;
+  }
 `;
 
 const RightButtons = styled(BottomNavigationAction)`
@@ -26,10 +29,17 @@ const RightButtons = styled(BottomNavigationAction)`
   width: 120px;
   height: 100%;
   font-size: 100px;
+  @media (max-width: 414px) {
+    width: 50px;
+  }
 `;
 
 const Button = styled(BottomNavigationAction)`
   padding: 0px 0px 0px 0px;
+  @media (max-width: 414px) {
+    width: 10px;
+    display: none;
+  }
 `;
 
 const DivLogo = styled.div`
@@ -37,6 +47,9 @@ const DivLogo = styled.div`
   width: 120px;
   margin: 6px;
   padding: 2px 0px;
+  @media (max-width: 414px) {
+    width: 120px;
+  }
 `;
 
 const Logo = styled.img`
@@ -44,6 +57,8 @@ const Logo = styled.img`
   height: 100%;
   object-fit: fill;
 `;
+
+
 
 export default class MaterialFooter extends React.Component {
   render() {

@@ -6,7 +6,11 @@ import Section1 from "../components/BodySections/Section1/Section1";
 import Section2 from "../components/BodySections/Section2/Section2";
 import Section3 from "../components/BodySections/Section3/Section3";
 
-const Body = styled.div``;
+const Body = styled.div`
+  @media (max-width: 414px) {
+    width: 100;
+  }
+`;
 
 export default class Home extends Component {
   render() {
