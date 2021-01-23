@@ -54,10 +54,10 @@ export default class Section2 extends React.Component {
         <DivContent>
           <DivMargin>
             <MainTitle>
-              O que é o GetNinjas?
+              O que é o Future Ninjas?
             </MainTitle>
             <Subtitle>
-              GetNinjas é a maior plataforma de contratação de serviços do Brasil.
+              Future Ninjas é uma plataforma de contratação de serviços online.
               Conectamos Profissionais de todo o Brasil com pessoas solicitando serviço, atendendo com qualidade, facilidade e rapidez todos os tipos de necessidade.
             </Subtitle>
           </DivMargin>

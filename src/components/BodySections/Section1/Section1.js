@@ -98,7 +98,7 @@ export default class Section1 extends React.Component {
             O jeito mais esperto de contratar um serviço
           </MainTitle>
           <Subtitle>
-            Fale o que precisa, receba até 4 orçamentos, escolha o melhor.
+            Fale o que precisa, receba orçamentos e escolha o melhor.
           </Subtitle>
           <DivInputButton>
             <InputMaterial id="outlined-basic" label="Digite aqui o que você precisa" variant="outlined" />

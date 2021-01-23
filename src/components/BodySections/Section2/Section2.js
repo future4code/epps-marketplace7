@@ -8,7 +8,7 @@ width: 100vw;
 height: 600px;
 align-items: center;
 justify-content: center;
-background-color: #ffffff
+background-color: #ffffff;
 `
 
 const DivContent = styled.div`
@@ -70,7 +70,7 @@ export default class Section2 extends React.Component {
               240.000
           </MainTitle>
             <Subtitle>
-              Clientes felizes por mês, com serviços contratados pelo GetNinjas.
+              Clientes felizes por mês, com serviços contratados pelo Future Ninjas.
           </Subtitle>
           </DivMargin>
           <DivMargin>

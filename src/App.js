@@ -5,7 +5,7 @@ import  Home  from "./Pages/Home";
 import ClientsPage from "./Pages/Clients/ClientsPage";
 import AdvertisersPage from './Pages/Advertisers/AdvertisersPage';
 import AboutUs from './Pages/AboutUs/AboutUs.js'
-import { JobsList } from "./Pages/Clients/JobsList";
+import styled from 'styled-components'
 
 const NinjaTheme = createMuiTheme({
   palette: {
@@ -64,9 +64,7 @@ export default class App extends React.Component {
     return (
       <div>
         <CssBaseline />
-        <ThemeProvider theme={NinjaTheme}>
-          {TelaAtual()}
-        </ThemeProvider>
+        <ThemeProvider theme={NinjaTheme}>{TelaAtual()}</ThemeProvider>
       </div>
     );
   }

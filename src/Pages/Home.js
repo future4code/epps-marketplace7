@@ -10,7 +10,6 @@ const Body = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
 export default class Home extends Component {
   render() {
     return (
