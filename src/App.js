@@ -1,11 +1,10 @@
 import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import  Home  from "./Pages/Home";
+import Home from "./Pages/Home";
 import ClientsPage from "./Pages/Clients/ClientsPage";
-import AdvertisersPage from './Pages/Advertisers/AdvertisersPage';
-import AboutUs from './Pages/AboutUs/AboutUs.js'
-import styled from 'styled-components'
+import AdvertisersPage from "./Pages/Advertisers/AdvertisersPage";
+import AboutUs from "./Pages/AboutUs/AboutUs.js";
 
 const NinjaTheme = createMuiTheme({
   palette: {
@@ -26,14 +25,14 @@ export default class App extends React.Component {
     this.setState({ tela: "Home" });
   };
   onClickClient = () => {
-	this.setState({ tela: "Client" });
+    this.setState({ tela: "Client" });
   };
   onClickSeller = () => {
     this.setState({ tela: "Seller" });
   };
   onclickAboutUs = () => {
-    this.setState({ tela: "AboutUs" })
-  }
+    this.setState({ tela: "AboutUs" });
+  };
   render() {
     const TelaAtual = () => {
       switch (this.state.tela) {
@@ -51,20 +50,25 @@ export default class App extends React.Component {
         case "Seller":
           return <AdvertisersPage onClickSair={this.onClickSair} />;
         case "AboutUs":
-          return <AboutUs 
-            onClickClient={this.onClickClient}
-            onClickSeller={this.onClickSeller}
-            onclickAboutUs={this.onclickAboutUs}
-          />
-          default:
-            return ""
+          return (
+            <AboutUs
+              onClickHome={this.onClickSair}
+              onClickClient={this.onClickClient}
+              onClickSeller={this.onClickSeller}
+              onclickAboutUs={this.onclickAboutUs}
+            />
+          );
+        default:
+          return "";
       }
     };
 
     return (
       <div>
         <CssBaseline />
-        <ThemeProvider theme={NinjaTheme}>{TelaAtual()}</ThemeProvider>
+        <ThemeProvider theme={NinjaTheme}>
+          {TelaAtual()}
+        </ThemeProvider>
       </div>
     );
   }
