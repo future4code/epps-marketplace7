@@ -9,7 +9,6 @@ const ContainerForm = styled.div`
   justify-content: space-between;
   width: 60vw;
   background-color: #8661b6;
-  height: 75vh;
   align-items: center;
   border-radius: 5px;
   padding: 15px;
