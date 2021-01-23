@@ -9,6 +9,7 @@ const DivContainer = styled.div`
   justify-content: center;
   @media (max-width: 414px) {
     flex-wrap: wrap;
+  height: 800px;
   }
 `;
 
@@ -60,7 +61,7 @@ const DivImage = styled.div`
   height: 100%;
   @media (max-width: 414px) {
     width: 100%;
-    height: 500px;
+    height: 400px;
   }
 `;
 
