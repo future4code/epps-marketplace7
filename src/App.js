@@ -5,6 +5,7 @@ import  Home  from "./Pages/Home";
 import ClientsPage from "./Pages/Clients/ClientsPage";
 import AdvertisersPage from './Pages/Advertisers/AdvertisersPage';
 import AboutUs from './Pages/AboutUs/AboutUs.js'
+import { JobsList } from "./Pages/Clients/JobsList";
 
 const NinjaTheme = createMuiTheme({
   palette: {
@@ -34,7 +35,6 @@ export default class App extends React.Component {
     this.setState({ tela: "AboutUs" })
   }
   render() {
-	  console.log(this.state.tela)
     const TelaAtual = () => {
       switch (this.state.tela) {
         case "Home":
@@ -51,14 +51,13 @@ export default class App extends React.Component {
         case "Seller":
           return <AdvertisersPage onClickSair={this.onClickSair} />;
         case "AboutUs":
-          return (
-            <AboutUs
-              onClickHome={this.onClickSair}
-              onClickClient={this.onClickClient}
-              onClickSeller={this.onClickSeller}
-              onclickAboutUs={this.onclickAboutUs}
-            />
-          );
+          return <AboutUs 
+            onClickClient={this.onClickClient}
+            onClickSeller={this.onClickSeller}
+            onclickAboutUs={this.onclickAboutUs}
+          />
+          default:
+            return ""
       }
     };
 

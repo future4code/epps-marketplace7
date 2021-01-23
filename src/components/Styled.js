@@ -41,6 +41,10 @@ export const Wrapper = styled.div`
     gap: 10px;
     justify-content: space-evenly;
 
+    #searchbar{
+      flex-grow: 1;
+    }
+
     input,
     select {
       height: 1.8rem;
@@ -113,7 +117,7 @@ export const JobsContainer = styled.div`
 `;
 
 export const SearchBar = styled(TextField)`
-  flex-grow: 1;
+  width: 100%;
   .MuiInputBase-input {
     padding: 5px 10px;
   }

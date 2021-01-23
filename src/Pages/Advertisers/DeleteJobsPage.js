@@ -7,7 +7,8 @@ import {
   Wrapper,
 } from "../../components/Styled";
 import InternalHeader from "../../components/InternalHeader";
-export class JobsList extends React.Component {
+
+export class DeleteJobsPage extends React.Component {
   state = {
     jobs: [],
     jobsFilter: {
@@ -16,8 +17,7 @@ export class JobsList extends React.Component {
       maxValue: Infinity,
     },
     selectedOrder: "",
-    showIcons: true,
-    regularPage: true,
+    deletePage: true,
   };
 
   componentDidMount() {
@@ -120,21 +120,17 @@ export class JobsList extends React.Component {
           orderType={this.orderType}
           selectedOrder={this.state.selectedOrder}
         />
-
         <JobsContainer>
           {orderedJobs.map((job) => {
             return (
               <JobCard
                 key={job.id}
                 id={job.id}
-                showIcons={this.state.showIcons}
                 title={job.title}
                 description={job.description}
                 value={job.value}
                 paymentMethods={job.paymentMethods}
                 dueDate={job.dueDate}
-                taken={job.taken}
-                regularPage={this.state.regularPage}
               />
             );
           })}
