@@ -48,12 +48,12 @@ export default function ButtonAppBar(props) {
       <AppBar position="static">
         <Toolbar>
           <Typography className={classes.title}>
-            <LogoHeader src={logo} />
+            <LogoHeader src={logo} onClick={props.onClickHome} />
           </Typography>
 
           <StyledBtnContainer>
-            <ContainedButtons 
-              client={"Quem Somos"} 
+            <ContainedButtons
+              client={"Quem Somos"}
               btnClient={props.onclickAboutUs}
             />
             <ContainedButtons
@@ -77,7 +77,6 @@ export default function ButtonAppBar(props) {
             btnClient={props.onClickSeller}
           />
         </MobileHeader>
-
       </AppBar>
     </div>
   );
