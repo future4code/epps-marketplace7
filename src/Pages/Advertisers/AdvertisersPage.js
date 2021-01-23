@@ -19,6 +19,7 @@ import { HiredJobsPage } from "../HiredJobsPage";
 import RegisterJob from "./RegisterJob";
 import { TopBar } from "../../components/Styled";
 import { DeleteJobsPage } from './DeleteJobsPage';
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 
 const drawerWidth = 240;
 
@@ -93,7 +94,7 @@ export default function AdvertisersPage(props) {
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <CreateIcon />
+            <DeleteForeverIcon />
           </ListItemIcon>
           <ListItemText
             primary="Excluir Job"
