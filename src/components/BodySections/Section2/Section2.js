@@ -24,7 +24,7 @@ const DivContent = styled.div`
   }
 `;
 
-const MainTitle = styled.p`
+const MainTitle = styled.p` 
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-size: 48px;
   line-height: 56px;
