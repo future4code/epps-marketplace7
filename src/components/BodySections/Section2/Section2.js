@@ -9,7 +9,7 @@ const DivContainer = styled.div`
   justify-content: center;
   @media (max-width: 414px) {
     flex-wrap: wrap;
-  height: 800px;
+    height: 800px;
   }
 `;
 

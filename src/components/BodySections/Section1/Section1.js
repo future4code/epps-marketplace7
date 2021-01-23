@@ -92,7 +92,7 @@ const DivFooterContents = styled.div`
 `;
 
 const VerifiedUserIconPer = styled(VerifiedUserIcon)`
-    width: 50px;
+  width: 50px;
   @media (max-width: 414px) {
     margin-bottom: 5px;
   }
@@ -112,7 +112,7 @@ const DivRating = styled.div`
   display: flex;
   margin: 3px 10px;
   @media (max-width: 414px) {
-    margin-top: 20px ;
+    margin-top: 20px;
   }
 `;
 

@@ -33,7 +33,7 @@ const MainTitle = styled.p`
   width: 400px;
   text-align: center;
   @media (max-width: 414px) {
-  font-size: 32px;
+    font-size: 32px;
   }
 `;
 const Subtitle = styled.p`
@@ -45,7 +45,7 @@ const Subtitle = styled.p`
   line-height: 32px;
   text-align: center;
   @media (max-width: 414px) {
-  font-size: 18px;
+    font-size: 18px;
   }
 `;
 
