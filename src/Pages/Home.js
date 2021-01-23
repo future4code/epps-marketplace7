@@ -14,18 +14,18 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        <MaterialHeader
+        {/* <MaterialHeader
           onClickHome={this.props.onClickHome}
           onClickClient={this.props.onClickClient}
           onClickSeller={this.props.onClickSeller}
           onclickAboutUs={this.props.onclickAboutUs}
-        />
+        /> */}
         <Body>
           <Section1 />
-          <Section2 />
-          <Section3 />
+          {/* <Section2 /> */}
+          {/* <Section3 /> */}
         </Body>
-        <MaterialFooter />
+        {/* <MaterialFooter /> */}
       </div>
     );
   }

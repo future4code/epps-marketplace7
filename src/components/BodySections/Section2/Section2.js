@@ -7,7 +7,6 @@ display: flex;
 height: 600px;
 align-items: center;
 justify-content: center;
-background-color: #ffffff;
 `
 
 const DivContent = styled.div`

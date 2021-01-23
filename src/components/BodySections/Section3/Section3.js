@@ -8,6 +8,7 @@ display: flex;
 height: 700px;
 align-items: center;
 justify-content: center;
+background-color: #ffffff;
 `
 
 const DivContent = styled.div`
