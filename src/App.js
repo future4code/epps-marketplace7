@@ -51,7 +51,8 @@ export default class App extends React.Component {
         case "Seller":
           return <AdvertisersPage onClickSair={this.onClickSair} />;
         case "AboutUs":
-          return <AboutUs 
+          return <AboutUs
+	    onClickHome={this.onClickSair}
             onClickClient={this.onClickClient}
             onClickSeller={this.onClickSeller}
             onclickAboutUs={this.onclickAboutUs}
