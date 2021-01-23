@@ -19,7 +19,7 @@ const ContainerForm = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    width: 45vw;
+    width: 100%;
     color: #494949;
     align-items: center;
     background-color: #f5f3fc;
@@ -32,7 +32,7 @@ const ContainerForm = styled.div`
   }
 `;
 const Input = styled.input`
-  width: 45vw;
+  width: 100%;
   line-height: 4vh;
   border-radius: 3px;
   background-color: #f5f3fc;
@@ -44,7 +44,7 @@ const Input = styled.input`
 `;
 
 const Text = styled.textarea`
-  width: 45vw;
+  width: 100%;
   height: 13vh;
   border-radius: 3px;
   border: none;
@@ -55,7 +55,7 @@ const Text = styled.textarea`
   }
 `;
 const Label = styled.label`
-  width: 45vw;
+  width: 100%;
   border: none;
   color: #f5f3fc;
   margin-top: 20px;
