@@ -20,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
 
 const DivContainer = styled.div`
 display: flex;
-width: 100vw;
 height: 600px;
 align-items: center;
 justify-content: center;

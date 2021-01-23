@@ -5,7 +5,6 @@ import Card1 from './card1'
 
 const DivContainer = styled.div`
 display: flex;
-width: 100vw;
 height: 700px;
 align-items: center;
 justify-content: center;
