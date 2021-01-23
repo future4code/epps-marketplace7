@@ -23,6 +23,9 @@ const ContainerForm = styled.div`
     width: 45vw;
     color: #f5f3fc;
     align-items: center;
+    background-color: #f5f3fc;
+    line-height: 4vh;
+    border-radius: 3px;
 
     input {
         margin-right: 15px;
@@ -31,7 +34,7 @@ const ContainerForm = styled.div`
 `;
 const Input = styled.input`
   width: 45vw;
-  height: 4vh;
+  line-height: 4vh;
   border-radius: 3px;
   background-color: #f5f3fc;
   padding: 5px;
