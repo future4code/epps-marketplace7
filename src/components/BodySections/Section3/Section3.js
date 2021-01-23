@@ -10,8 +10,8 @@ const DivContainer = styled.div`
   justify-content: center;
   background-color: #ffffff;
   @media (max-width: 414px) {
-    height: 1900px;
-    margin: 0;
+    height: 2000px;
+    margin: 10px 0px;
   }
 `;
 
@@ -36,6 +36,7 @@ const MainTitle = styled.p`
   @media (max-width: 414px) {
     width: 100%;
     margin: 0;
+    margin-top: 50px;
   }
 `;
 const Subtitle = styled.p`
@@ -82,6 +83,7 @@ export default class Section2 extends React.Component {
               serviço, atendendo com qualidade, facilidade e rapidez todos os
               tipos de necessidade.
             </Subtitle>
+            <MainTitle>Como funciona?</MainTitle>
           </DivMargin>
           <DivCard>
             <Card1

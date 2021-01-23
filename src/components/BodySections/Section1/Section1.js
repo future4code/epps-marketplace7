@@ -46,7 +46,9 @@ const MainTitle = styled.p`
   text-align: center;
 
   @media (max-width: 414px) {
-    font-size: 32px;
+    margin-top: 40px;
+    font-size: 38px;
+    line-height: 42px;
     width: 100%;
   }
 `;

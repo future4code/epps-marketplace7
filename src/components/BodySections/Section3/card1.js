@@ -7,7 +7,7 @@ const DivContent = styled.div`
   flex-direction: column;
   width: 400px;
   height: 300px;
-  margin: 10px;
+  margin: 0px 10px;
   @media (max-width: 414px) {
     margin: 20px 0px;
     height: 400px;
@@ -33,7 +33,8 @@ const MainTitle = styled.p`
   width: 400px;
   text-align: center;
   @media (max-width: 414px) {
-    font-size: 32px;
+    font-size: 36px;
+    margin-top: 10px;
   }
 `;
 const Subtitle = styled.p`
