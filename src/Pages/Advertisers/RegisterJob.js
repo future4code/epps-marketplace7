@@ -21,7 +21,7 @@ const ContainerForm = styled.div`
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 45vw;
-    color: #f5f3fc;
+    color: #494949;
     align-items: center;
     background-color: #f5f3fc;
     line-height: 4vh;
