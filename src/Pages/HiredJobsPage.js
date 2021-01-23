@@ -7,9 +7,15 @@ import { JobCard } from "../components/JobCard";
 export class HiredJobsPage extends React.Component {
   state = {
     takenJobs: [],
+    regularPage: true,
+    showIcons: true,
   };
 
   componentDidMount() {
+    this.takenJobs();
+  }
+
+  componentDidUpdate() {
     this.takenJobs();
   }
 
@@ -36,11 +42,15 @@ export class HiredJobsPage extends React.Component {
             return (
               <JobCard
                 key={job.id}
+                id={job.id}
                 title={job.title}
                 description={job.description}
                 value={job.value}
                 paymentMethods={job.paymentMethods}
                 dueDate={job.dueDate}
+                regularPage={this.state.regularPage}
+                taken={job.taken}
+                showIcons={this.state.showIcons}
               />
             );
           })}

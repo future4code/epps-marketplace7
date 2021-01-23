@@ -4,9 +4,33 @@ import { Card } from "./Styled";
 import styled from "styled-components";
 import DetailsIcon from "@material-ui/icons/Details";
 import AddBoxIcon from "@material-ui/icons/AddBox";
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { baseUrl } from "./Parameters";
 
 const StyledAddIcon = styled(AddBoxIcon)`
+  position: absolute;
+  right: 0;
+  top: 5px;
+  color: #494949;
+  cursor: pointer;
+  &:hover {
+    color: #f5f3fc;
+  }
+`;
+
+const StyledDeleteForeverIcon = styled(DeleteForeverIcon)`
+  position: absolute;
+  right: 0;
+  top: 5px;
+  color: #494949;
+  cursor: pointer;
+  &:hover {
+    color: #f5f3fc;
+  }
+`;
+
+const StyledExitToAppIcon = styled(ExitToAppIcon)`
   position: absolute;
   right: 0;
   top: 5px;
@@ -23,14 +47,36 @@ export class JobCard extends React.Component {
     this.setState({ details: !this.state.details });
   };
 
-  addJob = () => {
+  addJob = (id) => {
     if (
       window.confirm(
         `Tem certeza que deseja contratar o serviço ${this.props.title}?`
       )
     ) {
       axios.put(`${baseUrl}/${this.props.id}/take`);
-      alert("Serviço contratado!")
+      alert("Serviço contratado!");
+    }
+  };
+
+  giveUpJob = (id) => {
+    if (
+      window.confirm(
+        `Tem certeza que deseja desistir do serviço ${this.props.title}?`
+      )
+    ) {
+      axios.put(`${baseUrl}/${this.props.id}/giveup`);
+      alert("Serviço cancelado!");
+    }
+  };
+
+  deleteJob = (id) => {
+    if (
+      window.confirm(
+        `Tem certeza que deseja excluir o serviço ${this.props.title}?`
+      )
+    ) {
+      axios.delete(`${baseUrl}/${this.props.id}`);
+      alert("Serviço excluído!");
     }
   };
 
@@ -63,7 +109,25 @@ export class JobCard extends React.Component {
     return (
       <div>
         <Card>
-          <StyledAddIcon onClick={this.addJob} />
+          {this.props.regularPage ? (
+            <>
+              {this.props.showIcons && (
+                <>
+                  {this.props.taken ? (
+                    <StyledExitToAppIcon
+                      onClick={() => this.giveUpJob(this.props.id)}
+                    />
+                  ) : (
+                    <StyledAddIcon onClick={() => this.addJob(this.props.id)} />
+                  )}
+                </>
+              )}
+            </>
+          ) : (
+            <StyledDeleteForeverIcon
+              onClick={() => this.deleteJob(this.props.id)}
+            />
+          )}
           <h3>{this.props.title}</h3>
           <p className="description">
             <span>Descrição: </span>
@@ -71,7 +135,7 @@ export class JobCard extends React.Component {
           </p>
           <p>
             <span>Valor: </span>
-            R$ {this.props.value.toFixed(2)}
+            R$ {Number(this.props.value).toFixed(2)}
           </p>
           <StyledDetailsIcon onClick={this.toggleDetails} />
           {this.state.details && (

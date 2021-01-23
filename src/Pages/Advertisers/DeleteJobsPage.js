@@ -11,7 +11,7 @@ import {
 } from "../../components/Styled";
 import MenuItem from "@material-ui/core/MenuItem";
 
-export class JobsList extends React.Component {
+export class DeleteJobsPage extends React.Component {
   state = {
     jobs: [],
     jobsFilter: {
@@ -20,8 +20,7 @@ export class JobsList extends React.Component {
       maxValue: Infinity,
     },
     selectedOrder: "",
-    showIcons: true,
-    regularPage:true,
+    deletePage: true,
   };
 
   componentDidMount() {
@@ -167,7 +166,6 @@ export class JobsList extends React.Component {
                 paymentMethods={job.paymentMethods}
                 dueDate={job.dueDate}
                 taken={job.taken}
-                regularPage={this.state.regularPage}
               />
             );
           })}

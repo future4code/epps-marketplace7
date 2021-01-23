@@ -18,6 +18,7 @@ import ContainedButtons from "../../components/MaterialUI/MaterialButton";
 import { HiredJobsPage } from "../HiredJobsPage";
 import RegisterJob from "./RegisterJob";
 import { TopBar } from "../../components/Styled";
+import { DeleteJobsPage } from './DeleteJobsPage';
 
 const drawerWidth = 240;
 
@@ -90,6 +91,15 @@ export default function AdvertisersPage(props) {
             onClick={() => setCurrentScreen("Sign Job")}
           />
         </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <CreateIcon />
+          </ListItemIcon>
+          <ListItemText
+            primary="Excluir Job"
+            onClick={() => setCurrentScreen("Delete Job")}
+          />
+        </ListItem>
       </List>
     </div>
   );
@@ -103,6 +113,8 @@ export default function AdvertisersPage(props) {
         return <HiredJobsPage />;
       case "Sign Job":
         return <RegisterJob />;
+      case "Delete Job":
+        return <DeleteJobsPage />;
     }
   };
 
