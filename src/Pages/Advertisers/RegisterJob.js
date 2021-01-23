@@ -61,9 +61,9 @@ export default class RegisterJob extends React.Component {
     state = {
         inputTitle: '',
         inputDescription: '',
-        inputValue: 0,
+        inputValue: '',
         inputPayment: [],
-        inputDueDate: 0
+        inputDueDate: ''
     }
     handleInputTitle = (e) => {
         this.setState({ inputTitle: e.target.value })
@@ -74,7 +74,7 @@ export default class RegisterJob extends React.Component {
       }
       
       handleInputValue = (e) => {
-        this.setState({ inputValue: e.target.value })
+        this.setState({ inputValue: Number(e.target.value) })
       }
       
       handleinputPayment = (e) => {
@@ -82,7 +82,7 @@ export default class RegisterJob extends React.Component {
       }
       
       handleInputDueDate = (e) => {
-        this.setState({ inputDueDate: e.target.value })
+        this.setState({ inputDueDate: Number(e.target.value) })
       }
 
       createNeWJob = () => {
@@ -124,9 +124,9 @@ export default class RegisterJob extends React.Component {
                 <Input value={this.state.inputPayment} onChange={this.handleinputPayment} />
                 <Label>Prazo</Label>
                 <Input value={this.state.inputDueDate} onChange={this.handleInputDueDate} />
-                <button variant="contained"  disableElevation onClick={this.createNeWJob}>
+                <StyledButton variant="contained"  disableElevation onClick={this.createNeWJob}>
                     Cadastrar Trabalho
-                </button>
+                </StyledButton>
             </ContainerForm>
         )
     }

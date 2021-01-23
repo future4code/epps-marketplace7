@@ -10,7 +10,7 @@ const NinjaTheme = createMuiTheme({
   palette: {
     primary: {
       main: "#8661B6",
-    },
+    }, 
     secondary: {
       main: "#F5F3FC",
     },

@@ -24,6 +24,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    
   },
   drawer: {
     [theme.breakpoints.up("sm")]: {
@@ -157,6 +158,7 @@ export default function AdvertisersPage(props) {
       </nav>
       <main id="main-screen" className={classes.content}>
         <div className={classes.toolbar} />
+        
         {Tela()}
       </main>
     </div>
