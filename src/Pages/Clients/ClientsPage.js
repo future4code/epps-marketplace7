@@ -108,6 +108,8 @@ export default function ClientsPage(props) {
         return <JobsList />;
       case "Hired Jobs":
         return <HiredJobsPage />;
+      default:
+        return "";
     }
   };
 

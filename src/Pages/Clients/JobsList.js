@@ -4,13 +4,9 @@ import { baseUrl } from "../../components/Parameters";
 import { JobCard } from "../../components/JobCard";
 import {
   JobsContainer,
-  SearchBar,
-  SelectInput,
-  RegularInput,
   Wrapper,
 } from "../../components/Styled";
-import MenuItem from "@material-ui/core/MenuItem";
-
+import InternalHeader from "../../components/InternalHeader";
 export class JobsList extends React.Component {
   state = {
     jobs: [],
@@ -21,7 +17,7 @@ export class JobsList extends React.Component {
     },
     selectedOrder: "",
     showIcons: true,
-    regularPage:true,
+    regularPage: true,
   };
 
   componentDidMount() {
@@ -117,43 +113,14 @@ export class JobsList extends React.Component {
     const orderedJobs = filteredJobs.sort(this.sortItems);
     return (
       <Wrapper>
-        <div className="header">
-          <SearchBar
-            // id="outlined-helperText"
-            label="Buscar Job"
-            onChange={this.onChangeSearchName}
-            // placeholder="Digite o serviço ou descrição"
-            variant="outlined"
-          />
-          <RegularInput
-            // id="outlined-helperText"
-            type="Number"
-            min="0"
-            onChange={this.onChangeMinValue}
-            label="De (R$)"
-            defaultValue=""
-            variant="outlined"
-          />
-          <RegularInput
-            // id="outlined-helperText"
-            type="Number"
-            min="0"
-            onChange={this.onChangeMaxValue}
-            label="Até (R$)"
-            defaultValue=""
-            variant="outlined"
-          />
-          <SelectInput
-            select
-            label="Ordem"
-            value={this.state.selectedOrder}
-            onChange={this.orderType}
-            variant="outlined"
-          >
-            <MenuItem value="asc">Pelo menor valor</MenuItem>
-            <MenuItem value="desc">Pelo maior valor</MenuItem>
-          </SelectInput>
-        </div>
+        <InternalHeader
+          onChangeSearchName={this.onChangeSearchName}
+          onChangeMinValue={this.onChangeMinValue}
+          onChangeMaxValue={this.onChangeMaxValue}
+          orderType={this.orderType}
+          selectedOrder={this.state.selectedOrder}
+        />
+
         <JobsContainer>
           {orderedJobs.map((job) => {
             return (

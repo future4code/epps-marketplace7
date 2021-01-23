@@ -116,6 +116,8 @@ export default function AdvertisersPage(props) {
         return <RegisterJob />;
       case "Delete Job":
         return <DeleteJobsPage />;
+      default:
+        return "";
     }
   };
 

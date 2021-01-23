@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import logo from "../../components/images/logo.png";
 
@@ -39,7 +39,7 @@ export default class BoxUs extends React.Component {
             Se você tiver alguma dúvida ou comentário, não hesite em nos contatar.
             </h2>
 
-            <img src={logo} className="logoStyled"/>
+            <img src={logo} className="logoStyled" alt="" />
         </Body>
       </div>
     );

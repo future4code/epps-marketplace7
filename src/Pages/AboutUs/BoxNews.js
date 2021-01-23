@@ -30,7 +30,7 @@ const Body = styled.div`
 
 const HeadNews = styled.h2`
   text-align: center;
-  padding: 2%
+  padding: 2%;
 `
 
 
@@ -38,18 +38,26 @@ export default class BoxNews extends React.Component {
   render() {
     return (
       <div>
-          <HeadNews>Notícias</HeadNews>
+        <HeadNews>Notícias</HeadNews>
         <Body>
-                
-                <div className="BoxNew" >
-                    <img src={news1} /> <br />
-                    <h3>Future Ninja é eleito melhor site de jobs das Américas.</h3> </div>
-                <div className="BoxNew">
-                    <img src={news2} /> <br />
-                    <h3>Future Ninja é eleito melhor site de jobs das Américas.</h3> </div>
-                <div className="BoxNew"> 
-                    <img src={news3} /> <br />
-                    <h3>Future Ninja é eleito melhor site de jobs das Américas.</h3> </div>
+          <div className="BoxNew">
+            <img src={news1} alt="" /> <br />
+            <h3>
+              Future Ninja é eleito melhor site de jobs das Américas.
+            </h3>{" "}
+          </div>
+          <div className="BoxNew">
+            <img src={news2} alt="" /> <br />
+            <h3>
+              Future Ninja é eleito melhor site de jobs das Américas.
+            </h3>{" "}
+          </div>
+          <div className="BoxNew">
+            <img src={news3} alt="" /> <br />
+            <h3>
+              Future Ninja é eleito melhor site de jobs das Américas.
+            </h3>{" "}
+          </div>
         </Body>
       </div>
     );
