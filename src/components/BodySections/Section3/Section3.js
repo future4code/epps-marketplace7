@@ -5,12 +5,10 @@ import Card1 from "./card1";
 
 const DivContainer = styled.div`
   display: flex;
-  height: 700px;
-  align-items: center;
-  justify-content: center;
+  height: 900px;
   background-color: #ffffff;
   @media (max-width: 414px) {
-    height: 2000px;
+    height: 2150px;
     margin: 10px 0px;
   }
 `;
@@ -20,7 +18,6 @@ const DivContent = styled.div`
   flex-direction: column;
   width: 2500px;
   align-items: center;
-  justify-content: center;
   @media (max-width: 414px) {
     width: 100%;
   }
@@ -83,23 +80,25 @@ export default class Section2 extends React.Component {
               serviço, atendendo com qualidade, facilidade e rapidez todos os
               tipos de necessidade.
             </Subtitle>
+            <br />
+            <br />
             <MainTitle>Como funciona?</MainTitle>
           </DivMargin>
           <DivCard>
             <Card1
-              image="https://wallpapercave.com/wp/wp6690890.jpg"
-              title="Faça o seu pedido"
-              subtitle="Fale o que você precisa. É rápido e de graça!"
+              image="https://www.icontalent.com.br/wp-content/uploads//2020/08/Icon-The-One.svg"
+              title="Publique uma vaga"
+              subtitle="Publique uma vaga. Publique a sua vaga para milhares de profissionais, você irá receber propostas de freelancers talentosos em poucos minutos."
             />
             <Card1
-              image="https://wallpapercave.com/wp/wp6690890.jpg"
-              title="Faça o seu pedido"
-              subtitle="Fale o que você precisa. É rápido e de graça!"
+              image="https://www.icontalent.com.br/wp-content/uploads//2020/08/Icon-Chegada.svg"
+              title="Contrate"
+              subtitle="Reveja o histórico de trabalho, feedback de clientes e portfólio para limitar os candidatos. Então faça uma entrevista pelo chat e escolha o melhor."
             />
             <Card1
-              image="https://wallpapercave.com/wp/wp6690890.jpg"
-              title="Faça o seu pedido"
-              subtitle="Fale o que você precisa. É rápido e de graça!"
+              image="https://www.icontalent.com.br/wp-content/uploads//2020/08/Icon-Three.svg"
+              title="Pague com segurança"
+              subtitle="Com o pagamento seguro do 99Freelas, o pagamento será repassado para o freelancer somente quando o projeto estiver concluído."
             />
           </DivCard>
         </DivContent>

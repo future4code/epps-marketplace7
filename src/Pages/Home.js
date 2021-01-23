@@ -7,7 +7,7 @@ import Section2 from "../components/BodySections/Section2/Section2";
 import Section3 from "../components/BodySections/Section3/Section3";
 
 const Body = styled.div`
-
+  
 `;
 
 export default class Home extends Component {

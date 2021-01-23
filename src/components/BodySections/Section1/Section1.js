@@ -166,7 +166,7 @@ export default class Section1 extends React.Component {
           </DivFooterContents>
         </DivContent>
         <DivImage>
-          <Image src="https://wallpapercave.com/wp/wp6690890.jpg" />
+          <Image src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1560846389-e4e6d764cd61%3Fixlib%3Drb-1.2.1%26q%3D80%26fm%3Djpg%26crop%3Dentropy%26cs%3Dtinysrgb%26w%3D1080%26fit%3Dmax" />
         </DivImage>
       </DivContainer>
     );

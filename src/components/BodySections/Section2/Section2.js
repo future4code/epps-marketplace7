@@ -9,14 +9,14 @@ const DivContainer = styled.div`
   justify-content: center;
   @media (max-width: 414px) {
     flex-wrap: wrap;
-    height: 800px;
+    height: 1000px;
   }
 `;
 
 const DivContent = styled.div`
   display: flex;
   flex-direction: column;
-  width: 2500px;
+  width: 100%;
   align-items: center;
   justify-content: center;
   @media (max-width: 414px) {
@@ -57,7 +57,7 @@ const DivMargin = styled.div`
 
 const DivImage = styled.div`
   display: flex;
-  width: 78.59%;
+  width: 60%;
   height: 100%;
   @media (max-width: 414px) {
     width: 100%;
@@ -96,7 +96,7 @@ export default class Section2 extends React.Component {
           </DivMargin>
         </DivContent>
         <DivImage>
-          <Image src="https://wallpapercave.com/wp/wp6690890.jpg" />
+          <Image src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1573496799515-eebbb63814f2%3Fixlib%3Drb-1.2.1%26q%3D80%26fm%3Djpg%26crop%3Dentropy%26cs%3Dtinysrgb%26w%3D1080%26fit%3Dmax" />
         </DivImage>
       </DivContainer>
     );

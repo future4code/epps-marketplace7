@@ -9,7 +9,7 @@ const DivContent = styled.div`
   height: 300px;
   margin: 0px 10px;
   @media (max-width: 414px) {
-    margin: 20px 0px;
+    margin: 60px 0px;
     height: 400px;
   }
 `;
@@ -17,7 +17,7 @@ const DivContent = styled.div`
 const DivImage = styled.div`
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 300px;
 `;
 
 const Image = styled.img`
