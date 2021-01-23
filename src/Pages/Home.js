@@ -1,12 +1,15 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
-import MaterialHeader from '../components/MaterialUI/MaterialHeader'
+import React, { Component } from "react";
+import styled from "styled-components";
+import MaterialHeader from "../components/MaterialUI/MaterialHeader";
 import MaterialFooter from "../components/MaterialUI/MaterialFooter";
+import Section1 from "../components/BodySections/Section1/Section1";
+import Section2 from "../components/BodySections/Section2/Section2";
+import Section3 from "../components/BodySections/Section3/Section3";
 
 const Body = styled.div`
   display: flex;
-  height: 81.7vh ;
-`
+  flex-direction: column;
+`;
 
 export default class Home extends Component {
   render() {
@@ -18,7 +21,11 @@ export default class Home extends Component {
           onClickSeller={this.props.onClickSeller}
           onclickAboutUs={this.props.onclickAboutUs}
         />
-        <Body></Body>
+        <Body>
+          <Section1 />
+          <Section2 />
+          <Section3 />
+        </Body>
         <MaterialFooter />
       </div>
     );
