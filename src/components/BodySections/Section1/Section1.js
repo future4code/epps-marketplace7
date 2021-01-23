@@ -25,6 +25,7 @@ const DivContainer = styled.div`
   background-color: #ffffff;
   @media (max-width: 414px) {
     flex-wrap: wrap;
+    height: 870px;
   }
 `;
 
@@ -121,7 +122,7 @@ const DivImage = styled.div`
   height: 100%;
   @media (max-width: 414px) {
     width: 100%;
-    height: 500px;
+    height: 400px;
   }
 `;
 
