@@ -246,6 +246,7 @@ export const StyledExitToAppIcon = styled(ExitToAppIcon)`
 export const JobsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  margin: auto;
 `;
 
 export const SearchBar = styled(TextField)`
