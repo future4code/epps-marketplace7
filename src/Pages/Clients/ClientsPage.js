@@ -9,15 +9,14 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
-import Toolbar from "@material-ui/core/Toolbar";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import CardTravelIcon from "@material-ui/icons/CardTravel";
 import CreateIcon from "@material-ui/icons/Create";
 import logo from "../../components/images/logoH.png";
-import styled from "styled-components";
 import { JobsList } from "./JobsList";
-import ContainedButtons from "../../components/MaterialUI/MaterialButton";
+import StyledButton from "../../components/MaterialUI/MaterialButton";
 import { HiredJobsPage } from "../HiredJobsPage";
+import { TopBar, LogoTopBar } from './../../components/Styled';
 
 const drawerWidth = 240;
 
@@ -53,14 +52,6 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
   },
 }));
-
-const TopBar = styled(Toolbar)`
-  justify-content: space-between;
-`;
-
-const LogoTopBar = styled.img`
-  height: 50px;
-`;
 
 export default function ClientsPage(props) {
   const { window } = props;
@@ -128,7 +119,7 @@ export default function ClientsPage(props) {
             <MenuIcon />
           </IconButton>
           <LogoTopBar src={logo} />
-          <ContainedButtons client={"sair"} btnClient={props.onClickSair} />
+          <StyledButton text={"sair"} onClickBtn={props.onClickSair} />
         </TopBar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">

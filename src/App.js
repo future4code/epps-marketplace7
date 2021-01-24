@@ -1,10 +1,10 @@
 import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import Home from "./Pages/Home";
+import {Home} from "./Pages/Home/Home";
 import ClientsPage from "./Pages/Clients/ClientsPage";
 import AdvertisersPage from "./Pages/Advertisers/AdvertisersPage";
-import AboutUs from "./Pages/AboutUs/AboutUs.js";
+import {AboutUs} from "./Pages/AboutUs/AboutUs";
 
 const NinjaTheme = createMuiTheme({
   palette: {
@@ -27,11 +27,11 @@ export default class App extends React.Component {
   onClickClient = () => {
     this.setState({ tela: "Client" });
   };
-  onClickSeller = () => {
+  onClickAdvertiser = () => {
     this.setState({ tela: "Seller" });
   };
   onclickAboutUs = () => {
-    this.setState({ tela: "AboutUs" });
+    this.setState({ tela: "About Us" });
   };
   render() {
     const TelaAtual = () => {
@@ -41,7 +41,7 @@ export default class App extends React.Component {
             <Home
               onClickHome={this.onClickSair}
               onClickClient={this.onClickClient}
-              onClickSeller={this.onClickSeller}
+              onClickAdvertiser={this.onClickAdvertiser}
               onclickAboutUs={this.onclickAboutUs}
             />
           );
@@ -49,12 +49,12 @@ export default class App extends React.Component {
           return <ClientsPage onClickSair={this.onClickSair} />;
         case "Seller":
           return <AdvertisersPage onClickSair={this.onClickSair} />;
-        case "AboutUs":
+        case "About Us":
           return (
             <AboutUs
               onClickHome={this.onClickSair}
               onClickClient={this.onClickClient}
-              onClickSeller={this.onClickSeller}
+              onClickAdvertiser={this.onClickAdvertiser}
               onclickAboutUs={this.onclickAboutUs}
             />
           );
@@ -64,12 +64,10 @@ export default class App extends React.Component {
     };
 
     return (
-      <div>
+      <>
         <CssBaseline />
-        <ThemeProvider theme={NinjaTheme}>
-          {TelaAtual()}
-        </ThemeProvider>
-      </div>
+        <ThemeProvider theme={NinjaTheme}>{TelaAtual()}</ThemeProvider>
+      </>
     );
   }
 }

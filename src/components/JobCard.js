@@ -1,45 +1,16 @@
 import React from "react";
 import axios from "axios";
-import { Card } from "./Styled";
+import {
+  Card,
+  StyledAddIcon,
+  StyledDeleteForeverIcon,
+  StyledExitToAppIcon,
+} from "./Styled";
 import styled from "styled-components";
 import DetailsIcon from "@material-ui/icons/Details";
-import AddBoxIcon from "@material-ui/icons/AddBox";
-import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { baseUrl } from "./Parameters";
 
-const StyledAddIcon = styled(AddBoxIcon)`
-  position: absolute;
-  right: 0;
-  top: 5px;
-  color: #494949;
-  cursor: pointer;
-  &:hover {
-    color: #f5f3fc;
-  }
-`;
 
-const StyledDeleteForeverIcon = styled(DeleteForeverIcon)`
-  position: absolute;
-  right: 0;
-  top: 5px;
-  color: #494949;
-  cursor: pointer;
-  &:hover {
-    color: #f5f3fc;
-  }
-`;
-
-const StyledExitToAppIcon = styled(ExitToAppIcon)`
-  position: absolute;
-  right: 0;
-  top: 5px;
-  color: #494949;
-  cursor: pointer;
-  &:hover {
-    color: #f5f3fc;
-  }
-`;
 export class JobCard extends React.Component {
   state = { details: false };
 

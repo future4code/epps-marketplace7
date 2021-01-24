@@ -13,11 +13,10 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import CardTravelIcon from "@material-ui/icons/CardTravel";
 import CreateIcon from "@material-ui/icons/Create";
 import logo from "../../components/images/logoH.png";
-import styled from "styled-components";
-import ContainedButtons from "../../components/MaterialUI/MaterialButton";
+import StyledButton from "../../components/MaterialUI/MaterialButton";
 import { HiredJobsPage } from "../HiredJobsPage";
 import RegisterJob from "./RegisterJob";
-import { TopBar } from "../../components/Styled";
+import { TopBar, LogoTopBar } from "../../components/Styled";
 import { DeleteJobsPage } from './DeleteJobsPage';
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 
@@ -54,10 +53,6 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
   },
 }));
-
-const LogoTopBar = styled.img`
-  height: 50px;
-`;
 
 export default function AdvertisersPage(props) {
   const { window } = props;
@@ -136,7 +131,7 @@ export default function AdvertisersPage(props) {
             <MenuIcon />
           </IconButton>
           <LogoTopBar src={logo} />
-          <ContainedButtons client={"sair"} btnClient={props.onClickSair} />
+          <StyledButton text={"sair"} onClickBtn={props.onClickSair} />
         </TopBar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">
