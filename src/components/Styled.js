@@ -498,12 +498,15 @@ export const HomeSubtitle2 = styled.p`
     justify-content: space-between;
     width: 60vw;
     background-color: #8661b6;
-    height: 75vh;
     align-items: center;
     border-radius: 5px;
     padding: 15px;
     border: 1px solid #333;
     margin: auto;
+
+    @media (max-width:600px){
+      width: 90vw;
+    }
 
     .pagamento-container {
       display: flex;
@@ -535,7 +538,6 @@ export const HomeSubtitle2 = styled.p`
 
   export const FormText = styled.textarea`
     width: 45vw;
-    height: 13vh;
     border-radius: 3px;
     border: none;
     padding: 5px;
