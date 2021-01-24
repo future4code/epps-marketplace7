@@ -1,12 +1,12 @@
 import React from "react";
-import styled from 'styled-components'
+import styled from "styled-components";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Slide from "@material-ui/core/Slide";
 import logo from "../images/logoH.png";
-import Button from "../MaterialUI/MaterialButton"
+import StyledButton from "../MaterialUI/MaterialButton";
 
 function HideOnScroll(props) {
   const { children, window } = props;
@@ -22,29 +22,34 @@ function HideOnScroll(props) {
   );
 }
 
-const Logo = styled.img`
-height: 50px;
-`
-const ToolBar = styled(Toolbar)`
-display: flex;
-justify-content: space-between;
-flex-wrap: wrap;
-
-.btn-container{
+const HeaderLogo = styled.img`
+  height: 50px;
+`;
+const HeaderToolBar = styled(Toolbar)`
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
-  justify-content: center;
-}
 
-@media(max-width:550px){
-  justify-content: center;
-}
-`
+  .btn-container {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+  }
+
+  @media (max-width: 550px) {
+    justify-content: center;
+    flex-direction: column;
+
+    .btn-container {
+      margin: 0 -25px;
+    }
+  }
+`;
 
 const WrapperAppBar = styled(AppBar)`
-width: 100vw;
-left: 0;
-`
+  width: 100vw;
+  left: 0;
+`;
 
 export default function HideAppBar(props) {
   return (
@@ -52,14 +57,17 @@ export default function HideAppBar(props) {
       <CssBaseline />
       <HideOnScroll {...props}>
         <WrapperAppBar>
-          <ToolBar>
-            <Logo src={logo} alt="" />
+          <HeaderToolBar>
+            <HeaderLogo src={logo} alt="" onClick={props.onClickHome} />
             <div className="btn-container">
-              <Button client="Quem somos" onClick={props.aboutUs} />
-              <Button client="Cliente" onClick={props.client} />
-              <Button id="quemSomos" client="Anunciante" onClick={props.advertiser} />
+              <StyledButton texto="Sobre" onClickBtn={props.onclickAboutUs} />
+              <StyledButton texto="Cliente" onClickBtn={props.onClickClient} />
+              <StyledButton
+                texto="Anunciante"
+                onClickBtn={props.onClickAdvertiser}
+              />
             </div>
-          </ToolBar>
+          </HeaderToolBar>
         </WrapperAppBar>
       </HideOnScroll>
       <Toolbar />

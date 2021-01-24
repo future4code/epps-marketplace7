@@ -45,7 +45,7 @@ const Button = styled(BottomNavigationAction)`
 const DivLogo = styled.div`
   display: flex;
   width: 120px;
-  margin: 6px;
+  margin: 0 6px;
   padding: 2px 0px;
 
   @media(max-width:454px) {
@@ -65,29 +65,34 @@ export default function SimpleBottomNavigation() {
         <Logo src={logoImage} alt="Logo" />
       </DivLogo>
       <DivButtonSocial>
-        <Button
-          label="Whatsapp"
-          value="Whatsapp"
-          icon={<WhatsAppIcon style={{ color: "#ffffff" }} />}
-        />
-
-        <Button
-          label="Twitter"
-          value="Twitter"
-          icon={<TwitterIcon style={{ color: "#ffffff" }} />}
-        />
-
-        <Button
-          label="Instagram"
-          value="Instagram"
-          icon={<InstagramIcon style={{ color: "#ffffff" }} />}
-        />
-
-        <Button
-          label="Facebook"
-          value="Facebook"
-          icon={<FacebookIcon style={{ color: "#ffffff" }} />}
-        />
+        <a href="https://www.whatsapp.com" target="_blank">
+          <Button
+            label="Whatsapp"
+            value="Whatsapp"
+            icon={<WhatsAppIcon style={{ color: "#ffffff" }} />}
+          />
+        </a>
+        <a href="https://www.twitter.com" target="_blank">
+          <Button
+            label="Twitter"
+            value="Twitter"
+            icon={<TwitterIcon style={{ color: "#ffffff" }} />}
+          />
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+          <Button
+            label="Instagram"
+            value="Instagram"
+            icon={<InstagramIcon style={{ color: "#ffffff" }} />}
+          />
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+          <Button
+            label="Facebook"
+            value="Facebook"
+            icon={<FacebookIcon style={{ color: "#ffffff" }} />}
+          />
+        </a>
       </DivButtonSocial>
       <DivItemsRight>
         <RightButtons

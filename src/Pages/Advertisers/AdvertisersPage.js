@@ -14,7 +14,7 @@ import CardTravelIcon from "@material-ui/icons/CardTravel";
 import CreateIcon from "@material-ui/icons/Create";
 import logo from "../../components/images/logoH.png";
 import styled from "styled-components";
-import ContainedButtons from "../../components/MaterialUI/MaterialButton";
+import StyledButton from "../../components/MaterialUI/MaterialButton";
 import { HiredJobsPage } from "../HiredJobsPage";
 import RegisterJob from "./RegisterJob";
 import { TopBar } from "../../components/Styled";
@@ -136,7 +136,7 @@ export default function AdvertisersPage(props) {
             <MenuIcon />
           </IconButton>
           <LogoTopBar src={logo} />
-          <ContainedButtons client={"sair"} btnClient={props.onClickSair} />
+          <StyledButton texto={"sair"} onClickBtn={props.onClickSair} />
         </TopBar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">
