@@ -128,7 +128,7 @@ export default function ClientsPage(props) {
             <MenuIcon />
           </IconButton>
           <LogoTopBar src={logo} />
-          <StyledButton texto={"sair"} onClickBtn={props.onClickSair} />
+          <StyledButton text={"sair"} onClickBtn={props.onClickSair} />
         </TopBar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">

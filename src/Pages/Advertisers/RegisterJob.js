@@ -1,71 +1,13 @@
 import React from "react";
-import styled from "styled-components";
 import axios from "axios";
-import ContainedButtons from "../../components/MaterialUI/MaterialButton";
-
-const ContainerForm = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 60vw;
-  background-color: #8661b6;
-  height: 75vh;
-  align-items: center;
-  border-radius: 5px;
-  padding: 15px;
-  border: 1px solid #333;
-  margin: auto;
-
-  .pagamento-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 45vw;
-    color: #f5f3fc;
-    align-items: center;
-    background-color: #f5f3fc;
-    line-height: 4vh;
-    border-radius: 3px;
-
-    input {
-        margin-right: 15px;
-    }
-  }
-`;
-const Input = styled.input`
-  width: 45vw;
-  line-height: 4vh;
-  border-radius: 3px;
-  background-color: #f5f3fc;
-  padding: 5px;
-  border: none;
-  &:focus {
-    outline: none;
-  }
-`;
-
-const Text = styled.textarea`
-  width: 45vw;
-  height: 13vh;
-  border-radius: 3px;
-  border: none;
-  padding: 5px;
-  resize: none;
-  &:focus {
-    outline: none;
-  }
-`;
-const Label = styled.label`
-  width: 45vw;
-  border: none;
-  color: #f5f3fc;
-  margin-top: 20px;
-`;
-const Title = styled.h2`
-  padding: 0;
-  color: #F5F3FC;
-`;
-
+import StyledButton from "../../components/MaterialUI/MaterialButton";
+import {
+  ContainerForm,
+  FormInput,
+  FormText,
+  FormLabel,
+  FormTitle,
+} from "./../../components/Styled";
 export default class RegisterJob extends React.Component {
   state = {
     inputTitle: "",
@@ -126,23 +68,28 @@ export default class RegisterJob extends React.Component {
   render() {
     return (
       <ContainerForm>
-        <Title>Cadastre um novo Job</Title>
-        <Label>Titulo</Label>
-        <Input value={this.state.inputTitle} onChange={this.handleInputTitle} />
-        <Label>Descrição</Label>
-        <Text
+        <FormTitle>Cadastre um novo Job</FormTitle>
+        <FormLabel>Titulo</FormLabel>
+        <FormInput
+          value={this.state.inputTitle}
+          onChange={this.handleInputTitle}
+        />
+        <FormLabel>Descrição</FormLabel>
+        <FormText
           rows="4"
           cols="50"
           value={this.state.inputDescription}
           onChange={this.handleInputDescription}
         />
-        <Label>Valor da remuneração</Label>
-        <Input
+        <FormLabel>Valor da remuneração (R$)</FormLabel>
+        <FormInput
           type="number"
           value={this.state.inputValue}
           onChange={this.handleInputValue}
         />
-        <Label>Método(s) de pagamento oferecidos (separar por vírgulas)</Label>
+        <FormLabel>
+          Método(s) de pagamento
+        </FormLabel>
         <div className="pagamento-container">
           <label>
             Dinheiro <input type="checkbox" value="Dinheiro" />
@@ -163,16 +110,13 @@ export default class RegisterJob extends React.Component {
             Pix <input type="checkbox" value="Pix" />
           </label>
         </div>
-        <Label>Prazo (dias)</Label>
-        <Input
+        <FormLabel>Prazo (dias)</FormLabel>
+        <FormInput
           type="number"
           value={this.state.inputDueDate}
           onChange={this.handleInputDueDate}
         />
-        <ContainedButtons
-          client={"Cadastrar Job"}
-          btnClient={this.createNeWJob}
-        />
+        <StyledButton text={"Cadastrar Job"} onClickBtn={this.createNeWJob} />
       </ContainerForm>
     );
   }

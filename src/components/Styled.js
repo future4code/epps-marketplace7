@@ -1,12 +1,44 @@
 import styled from "styled-components";
+import AppBar from "@material-ui/core/AppBar";
 import DetailsIcon from "@material-ui/icons/Details";
 import TextField from "@material-ui/core/TextField";
 import Toolbar from "@material-ui/core/Toolbar";
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
 
+// HEADER -------------------------------------
 export const LogoHeader = styled.img`
   width: 250px;
   cursor: pointer;
+`;
+
+export const HeaderLogo = styled.img`
+  height: 50px;
+  cursor: pointer;
+`;
+export const HeaderToolBar = styled(Toolbar)`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .btn-container {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+  }
+
+  @media (max-width: 550px) {
+    justify-content: center;
+    flex-direction: column;
+
+    .btn-container {
+      margin: 0 -25px;
+    }
+  }
+`;
+
+export const WrapperAppBar = styled(AppBar)`
+  width: 100vw;
+  left: 0;
 `;
 
 export const TopBar = styled(Toolbar)`
@@ -23,6 +55,8 @@ export const TopBar = styled(Toolbar)`
     flex-wrap: wrap;
   }
 `;
+// ------------------------------------------------
+
 
 export const MainContainer = styled.div`
   display: flex;
@@ -34,6 +68,7 @@ export const MainContainer = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin: auto;
 
   .header {
     display: flex;
@@ -355,3 +390,67 @@ export const HomeSubtitle2 = styled.p`
     margin-bottom: 5px;
   `;
   // ---------------------------------------------------
+
+  // JOBS FORM -------------------------------------------
+  export const ContainerForm = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60vw;
+    background-color: #8661b6;
+    height: 75vh;
+    align-items: center;
+    border-radius: 5px;
+    padding: 15px;
+    border: 1px solid #333;
+    margin: auto;
+
+    .pagamento-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      width: 45vw;
+      color: #494949;
+      align-items: center;
+      background-color: #f5f3fc;
+      line-height: 4vh;
+      border-radius: 3px;
+
+      input {
+        margin-right: 15px;
+      }
+    }
+  `;
+  export const FormInput = styled.input`
+    width: 45vw;
+    line-height: 4vh;
+    border-radius: 3px;
+    background-color: #f5f3fc;
+    padding: 5px;
+    border: none;
+    &:focus {
+      outline: none;
+    }
+  `;
+
+  export const FormText = styled.textarea`
+    width: 45vw;
+    height: 13vh;
+    border-radius: 3px;
+    border: none;
+    padding: 5px;
+    resize: none;
+    &:focus {
+      outline: none;
+    }
+  `;
+  export const FormLabel = styled.label`
+    width: 45vw;
+    border: none;
+    color: #f5f3fc;
+    margin-top: 20px;
+  `;
+  export const FormTitle = styled.h2`
+    padding: 0;
+    color: #f5f3fc;
+  `;

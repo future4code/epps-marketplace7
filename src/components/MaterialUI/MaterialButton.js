@@ -22,7 +22,7 @@ export default function ContainedButtons(props) {
   return (
     <div className={classes.root}>
       <StyledButton variant="contained" color="primary" onClick={props.onClickBtn}>
-        {props.texto}
+        {props.text}
       </StyledButton>
     </div>
   );

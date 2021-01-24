@@ -1,12 +1,11 @@
 import React from "react";
-import styled from "styled-components";
-import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Slide from "@material-ui/core/Slide";
 import logo from "../images/logoH.png";
 import StyledButton from "../MaterialUI/MaterialButton";
+import { HeaderLogo, HeaderToolBar, WrapperAppBar } from "../Styled";
 
 function HideOnScroll(props) {
   const { children, window } = props;
@@ -22,35 +21,6 @@ function HideOnScroll(props) {
   );
 }
 
-const HeaderLogo = styled.img`
-  height: 50px;
-`;
-const HeaderToolBar = styled(Toolbar)`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
-  .btn-container {
-    display: flex;
-    /* flex-wrap: wrap; */
-    justify-content: center;
-  }
-
-  @media (max-width: 550px) {
-    justify-content: center;
-    flex-direction: column;
-
-    .btn-container {
-      margin: 0 -25px;
-    }
-  }
-`;
-
-const WrapperAppBar = styled(AppBar)`
-  width: 100vw;
-  left: 0;
-`;
-
 export default function HideAppBar(props) {
   return (
     <React.Fragment>
@@ -60,10 +30,10 @@ export default function HideAppBar(props) {
           <HeaderToolBar>
             <HeaderLogo src={logo} alt="" onClick={props.onClickHome} />
             <div className="btn-container">
-              <StyledButton texto="Sobre" onClickBtn={props.onclickAboutUs} />
-              <StyledButton texto="Cliente" onClickBtn={props.onClickClient} />
+              <StyledButton text="Sobre" onClickBtn={props.onclickAboutUs} />
+              <StyledButton text="Cliente" onClickBtn={props.onClickClient} />
               <StyledButton
-                texto="Anunciante"
+                text="Anunciante"
                 onClickBtn={props.onClickAdvertiser}
               />
             </div>
