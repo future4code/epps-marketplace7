@@ -1,81 +1,46 @@
 import React from "react";
-import styled from "styled-components";
-import logo from "../images/logoH.png";
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import ContainedButtons from "./MaterialButton";
-import { LogoHeader } from "../Styled";
-import { Typography } from "@material-ui/core";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+import Slide from "@material-ui/core/Slide";
+import logo from "../images/logoH.png";
+import StyledButton from "../MaterialUI/MaterialButton";
+import { HeaderLogo, HeaderToolBar, WrapperAppBar } from "../Styled";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-}));
-
-const StyledBtnContainer = styled.div`
-  visibility: visible;
-  display: flex;
-
-  @media (max-width: 700px) {
-    visibility: hidden;
-  }
-`;
-
-const MobileHeader = styled(Toolbar)`
-  display: none;
-
-  @media (max-width: 699px) {
-    display: flex;
-    justify-content: center;
-  }
-`;
-
-export default function ButtonAppBar(props) {
-  const classes = useStyles();
+function HideOnScroll(props) {
+  const { children, window } = props;
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({ target: window ? window() : undefined });
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography className={classes.title}>
-            <LogoHeader src={logo} onClick={props.onClickHome} />
-          </Typography>
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  );
+}
 
-          <StyledBtnContainer>
-            <ContainedButtons
-              client={"Quem Somos"}
-              btnClient={props.onclickAboutUs}
-            />
-            <ContainedButtons
-              client={"Cliente"}
-              btnClient={props.onClickClient}
-            />
-            <ContainedButtons
-              client={"Anunciante"}
-              btnClient={props.onClickSeller}
-            />
-          </StyledBtnContainer>
-        </Toolbar>
-
-        <MobileHeader>
-          <ContainedButtons
-            client={"Cliente"}
-            btnClient={props.onClickClient}
-          />
-          <ContainedButtons
-            client={"Anunciante"}
-            btnClient={props.onClickSeller}
-          />
-        </MobileHeader>
-      </AppBar>
-    </div>
+export default function HideAppBar(props) {
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <HideOnScroll {...props}>
+        <WrapperAppBar>
+          <HeaderToolBar>
+            <HeaderLogo src={logo} alt="" onClick={props.onClickHome} />
+            <div className="btn-container">
+              <StyledButton text="Sobre" onClickBtn={props.onclickAboutUs} />
+              <StyledButton text="Cliente" onClickBtn={props.onClickClient} />
+              <StyledButton
+                text="Anunciante"
+                onClickBtn={props.onClickAdvertiser}
+              />
+            </div>
+          </HeaderToolBar>
+        </WrapperAppBar>
+      </HideOnScroll>
+      <Toolbar />
+    </React.Fragment>
   );
 }
