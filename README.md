@@ -3,12 +3,12 @@ Projeto Future Ninjas
 Link: https://limping-noise.surge.sh
 
 Desenvolvido por:
-Bruno Silva
-Fabio dos Santos
-Franciane Brito
-Igor Chacon
-Matheus Novaes
-Yuri Pinheiro
+- Bruno Silva
+- Fabio dos Santos
+- Franciane Brito
+- Igor Chacon
+- Matheus Novaes
+- Yuri Pinheiro
 
 O projeto consiste em um marketplace voltado para a oferta de freelancers. Possui ambiente para cliente e anunciante.
 
